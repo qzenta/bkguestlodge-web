@@ -3,17 +3,36 @@ import { Suspense } from "react";
 import ContactForm from "@/components/shared/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description: "Get in touch with BK Guest Lodge — Guest Lodge and Student Accommodation enquiries.",
+  title: {
+    absolute: "Contact Us | BK Guest Lodge",
+  },
+  description: "Get in touch with BK Guest Lodge via WhatsApp, email, or our contact form.",
 };
 
 export default function ContactPage() {
   return (
     <main className="mx-auto max-w-8xl px-4 py-16 md:px-8">
-      <h1 className="font-display text-3xl font-semibold text-charcoal-ink">Contact Us</h1>
+      <h1 className="font-display text-3xl font-semibold text-charcoal-ink">Get in touch</h1>
       <p className="mt-4 max-w-xl font-body text-charcoal-ink/80">
-        Fill out the form below, or use the WhatsApp button for a faster response.
+        Whether you&rsquo;re booking a stay, applying for student accommodation, or just have
+        a question — reach out however&rsquo;s easiest for you.
       </p>
+
+      <dl className="mt-6 space-y-1 font-body text-sm text-charcoal-ink/80">
+        <div>
+          <dt className="inline font-utility font-semibold text-charcoal-ink">WhatsApp: </dt>
+          <dd className="inline">072 080 0327</dd>
+        </div>
+        <div>
+          <dt className="inline font-utility font-semibold text-charcoal-ink">Email: </dt>
+          <dd className="inline">info@bkguestlodge.co.za</dd>
+        </div>
+        <div>
+          <dt className="inline font-utility font-semibold text-charcoal-ink">Address: </dt>
+          <dd className="inline">8 Meurant Street, Vanderbijlpark S E 1, Vanderbijlpark, Gauteng, 1911</dd>
+        </div>
+      </dl>
+
       <div className="mt-10">
         <Suspense fallback={null}>
           <ContactForm />

@@ -1,10 +1,14 @@
-import type { Facility } from "./types";
+import { PENDING_CONTENT, type Facility } from "./types";
 
+// Draft list from BKGL_Content_Draft.md — every item was bracketed
+// ("pending final list" / "not yet verified complete"). Do not fill in
+// descriptions until the client confirms; the names below are the
+// draft's candidates, not confirmed copy.
 export const facilities: Facility[] = [
-  { icon: "wifi", title: "Free Wi-Fi", description: "Fast, reliable internet throughout the property." },
-  { icon: "car", title: "Secure Parking", description: "On-site, gated parking for residents and guests." },
-  { icon: "shield", title: "24-Hour Security", description: "Access control and on-site security personnel." },
-  { icon: "utensils", title: "Communal Kitchen", description: "Shared kitchen facilities for self-catering." },
-  { icon: "shirt", title: "Laundry", description: "On-site laundry facilities." },
-  { icon: "book-open", title: "Study Areas", description: "Quiet spaces suited to remote work and studying." },
+  { icon: "flame", title: "Braai area", description: PENDING_CONTENT, pending: true },
+  { icon: "car", title: "Secure parking", description: PENDING_CONTENT, pending: true },
+  { icon: "zap", title: "Backup water/power", description: PENDING_CONTENT, pending: true },
+  { icon: "wifi", title: "Wi-Fi", description: PENDING_CONTENT, pending: true },
+  { icon: "shirt", title: "Laundry facilities", description: PENDING_CONTENT, pending: true },
+  { icon: "book-open", title: "Communal study/common area", description: PENDING_CONTENT, pending: true },
 ];

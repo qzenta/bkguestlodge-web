@@ -37,7 +37,13 @@ export default function FAQAccordion({ faqs }: { faqs: FaqItem[] }) {
                       {faq.question}
                     </button>
                     {isOpen && (
-                      <p className="px-5 pb-4 font-body text-sm text-charcoal-ink/80">{faq.answer}</p>
+                      <p
+                        className={`px-5 pb-4 font-body text-sm ${
+                          faq.pending ? "italic text-ochre-clay" : "text-charcoal-ink/80"
+                        }`}
+                      >
+                        {faq.answer}
+                      </p>
                     )}
                   </div>
                 );

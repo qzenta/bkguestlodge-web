@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s | BK Guest Lodge — Guest Lodge & Student Accommodation, Vanderbijlpark",
   },
   description:
-    "BK Guest Lodge — Accommodation Solutions in Vanderbijlpark, spanning short-stay Guest Lodge and long-term Student Accommodation.",
+    "Comfortable short stays and safe student housing at BK Guest Lodge, Vanderbijlpark. Book your stay or apply for accommodation today.",
 };
 
 export default function RootLayout({

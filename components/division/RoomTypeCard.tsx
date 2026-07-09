@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { RoomType } from "@/lib/content/types";
+import PendingNote from "@/components/shared/PendingNote";
 
 const accentClass: Record<RoomType["division"], string> = {
   "guest-lodge": "border-ochre-clay",
@@ -7,6 +8,19 @@ const accentClass: Record<RoomType["division"], string> = {
 };
 
 export default function RoomTypeCard({ room }: { room: RoomType }) {
+  if (room.pending) {
+    return (
+      <div
+        className={`rounded-lg border-t-4 border-dashed bg-soft-ivory p-5 shadow-sm ${accentClass[room.division]}`}
+      >
+        <h3 className="font-display text-lg font-semibold text-charcoal-ink">Room details</h3>
+        <div className="mt-2">
+          <PendingNote text="TODO: pending client content — room name, photo, pricing, amenities" />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={`overflow-hidden rounded-lg border-t-4 bg-soft-ivory shadow-sm ${accentClass[room.division]}`}>
       <div className="relative aspect-[4/3] bg-warm-sand">
@@ -15,7 +29,7 @@ export default function RoomTypeCard({ room }: { room: RoomType }) {
       <div className="p-5">
         <h3 className="font-display text-lg font-semibold text-charcoal-ink">{room.name}</h3>
         <p className="mt-1 font-utility text-sm text-charcoal-ink">
-          R{room.price.toLocaleString()} / {room.priceUnit}
+          R{room.price?.toLocaleString()} / {room.priceUnit}
         </p>
         {room.leaseTerm && (
           <p className="mt-1 font-body text-xs text-charcoal-ink/60">{room.leaseTerm}</p>

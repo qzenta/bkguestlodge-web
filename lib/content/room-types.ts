@@ -1,42 +1,28 @@
-import type { RoomType } from "./types";
+import { PENDING_CONTENT, type RoomType } from "./types";
 
+// No real room types, photos, pricing, or lease terms exist yet
+// (BKGL_Content_Draft.md: "repeat per type once real types/photos exist").
+// One pending placeholder per division — do not invent room names or prices.
 export const roomTypes: RoomType[] = [
   {
-    id: "gl-standard",
-    name: "Standard Room",
+    id: "gl-pending",
+    name: PENDING_CONTENT,
     division: "guest-lodge",
-    photo: "/images/guest-lodge/standard-room.jpg",
-    price: 650,
+    photo: "",
+    price: null,
     priceUnit: "night",
-    amenities: ["Wi-Fi", "Workspace", "En-suite bathroom", "DSTV"],
+    amenities: [PENDING_CONTENT],
+    pending: true,
   },
   {
-    id: "gl-deluxe",
-    name: "Deluxe Room",
-    division: "guest-lodge",
-    photo: "/images/guest-lodge/deluxe-room.jpg",
-    price: 850,
-    priceUnit: "night",
-    amenities: ["Wi-Fi", "Workspace", "En-suite bathroom", "DSTV", "Mini fridge"],
-  },
-  {
-    id: "sa-single",
-    name: "Single Room",
+    id: "sa-pending",
+    name: PENDING_CONTENT,
     division: "student-accommodation",
-    photo: "/images/student-accommodation/single-room.jpg",
-    price: 3200,
+    photo: "",
+    price: null,
     priceUnit: "month",
-    leaseTerm: "10-month lease (Feb–Nov)",
-    amenities: ["Wi-Fi", "Study desk", "Shared kitchen", "Security"],
-  },
-  {
-    id: "sa-shared",
-    name: "Shared Room",
-    division: "student-accommodation",
-    photo: "/images/student-accommodation/shared-room.jpg",
-    price: 2200,
-    priceUnit: "month",
-    leaseTerm: "10-month lease (Feb–Nov)",
-    amenities: ["Wi-Fi", "Study desk", "Shared kitchen", "Security"],
+    leaseTerm: PENDING_CONTENT,
+    amenities: [PENDING_CONTENT],
+    pending: true,
   },
 ];

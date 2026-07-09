@@ -1,34 +1,48 @@
-import type { FaqItem } from "./types";
+import { PENDING_CONTENT, type FaqItem } from "./types";
 
+// Questions are from BKGL_Content_Draft.md as given. Answers marked
+// `[fill in]` / bracketed in the draft become PENDING_CONTENT here —
+// only the General question had a real, confirmed answer.
 export const faqs: FaqItem[] = [
   {
     category: "general",
-    question: "Where is BK Guest Lodge located?",
-    answer: "8 Meurant Street, Vanderbijlpark S E 1, Gauteng, 1911.",
-  },
-  {
-    category: "general",
     question: "How do I get in touch?",
-    answer: "Use the WhatsApp button on any page, or the contact form — we respond as quickly as possible.",
+    answer: "WhatsApp us at 072 080 0327, email info@bkguestlodge.co.za, or use the contact form.",
   },
   {
     category: "guest-lodge",
-    question: "What are your check-in and check-out times?",
-    answer: "Check-in from 14:00, check-out by 10:00. Early/late requests can be arranged on WhatsApp.",
+    question: "What time is check-in/check-out?",
+    answer: PENDING_CONTENT,
+    pending: true,
+  },
+  {
+    category: "guest-lodge",
+    question: "Is parking available?",
+    answer: `Yes — ${PENDING_CONTENT} (secure/gated details to confirm).`,
+    pending: true,
   },
   {
     category: "guest-lodge",
     question: "Do you offer long-stay rates for contractors?",
-    answer: "Yes — message us on WhatsApp with your dates for a weekly or monthly rate.",
+    answer: PENDING_CONTENT,
+    pending: true,
   },
   {
     category: "student-accommodation",
-    question: "What is the application process?",
-    answer: "Submit an enquiry via the Student Accommodation page, and our team will send the application form and required documents.",
+    question: "What's included in the monthly rate?",
+    answer: PENDING_CONTENT,
+    pending: true,
   },
   {
     category: "student-accommodation",
-    question: "What intake periods are available?",
-    answer: "Intakes align with the academic year — contact us for current availability.",
+    question: "Is there a lease minimum?",
+    answer: PENDING_CONTENT,
+    pending: true,
+  },
+  {
+    category: "student-accommodation",
+    question: "What are the house rules?",
+    answer: PENDING_CONTENT,
+    pending: true,
   },
 ];

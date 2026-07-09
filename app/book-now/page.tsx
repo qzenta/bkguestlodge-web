@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import BookingCTA from "@/components/division/BookingCTA";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Book Now",
@@ -8,15 +8,25 @@ export const metadata: Metadata = {
 
 export default function BookNowPage() {
   return (
-    <main className="mx-auto max-w-8xl px-4 py-16 md:px-8">
-      <div className="mx-auto max-w-md">
-        <h1 className="font-display text-3xl font-semibold text-charcoal-ink">Book Now</h1>
-        <p className="mt-4 font-body text-charcoal-ink/80">
-          Send us your dates and we&rsquo;ll confirm availability over WhatsApp.
-        </p>
-        <div className="mt-8">
-          <BookingCTA />
-        </div>
+    <main className="mx-auto max-w-8xl px-4 py-16 text-center md:px-8">
+      <h1 className="font-display text-3xl font-semibold text-charcoal-ink">Ready to stay?</h1>
+      <p className="mt-4 font-body text-charcoal-ink/80">
+        Let us know which you&rsquo;re here for, and we&rsquo;ll take it from there.
+      </p>
+
+      <div className="mx-auto mt-10 flex max-w-2xl flex-col gap-4 sm:flex-row">
+        <Link
+          href="/accommodation/guest-lodge"
+          className="flex-1 rounded-lg bg-ochre-clay px-6 py-8 font-utility text-soft-ivory hover:opacity-90"
+        >
+          Guest Lodge — Book now →
+        </Link>
+        <Link
+          href="/accommodation/student-accommodation"
+          className="flex-1 rounded-lg bg-cornflower-dusk px-6 py-8 font-utility text-soft-ivory hover:opacity-90"
+        >
+          Student Accommodation — Apply now →
+        </Link>
       </div>
     </main>
   );
