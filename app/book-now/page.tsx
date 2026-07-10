@@ -23,9 +23,12 @@ export default function BookNowPage() {
         </Link>
         <Link
           href="/accommodation/student-accommodation"
-          className="flex-1 rounded-lg bg-cornflower-dusk px-6 py-8 font-utility text-soft-ivory hover:opacity-90"
+          className="flex flex-1 flex-col items-center gap-2 rounded-lg bg-cornflower-dusk px-6 py-8 font-utility text-soft-ivory hover:opacity-90"
         >
-          Student Accommodation — Apply now →
+          <span className="rounded-full bg-slate-teal px-3 py-1 text-xs font-semibold uppercase tracking-wide">
+            Opening January 2027
+          </span>
+          Student Accommodation — Learn more →
         </Link>
       </div>
     </main>

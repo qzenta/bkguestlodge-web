@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     absolute: "Student Accommodation | BK Guest Lodge, Vanderbijlpark",
   },
   description:
-    "Safe, affordable student accommodation in Vanderbijlpark, close to Vaal-region campuses.",
+    "Student accommodation opening January 2027 in Vanderbijlpark, close to Vaal-region campuses — safe, affordable, secure.",
 };
 
 export default function StudentAccommodationPage() {
