@@ -21,7 +21,9 @@ export interface Facility {
   icon: string;
   title: string;
   description: string;
+  photo?: string;
   pending?: boolean;
+  newlyDiscovered?: boolean;
 }
 
 export interface Testimonial {
