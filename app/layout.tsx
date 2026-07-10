@@ -22,6 +22,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.bkguestlodge.co.za"),
   title: {
     default: "BK Guest Lodge — Guest Lodge & Student Accommodation, Vanderbijlpark",
     template: "%s | BK Guest Lodge — Guest Lodge & Student Accommodation, Vanderbijlpark",

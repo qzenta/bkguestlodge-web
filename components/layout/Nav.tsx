@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const links = [
@@ -20,7 +21,15 @@ export default function Nav() {
   return (
     <header className="sticky top-0 z-40 bg-slate-teal text-soft-ivory">
       <div className="mx-auto flex max-w-8xl items-center justify-between px-4 py-4 md:px-8">
-        <Link href="/" className="font-display text-lg font-semibold tracking-wide">
+        <Link href="/" className="flex items-center gap-2 font-display text-lg font-semibold tracking-wide">
+          <Image
+            src="/brand/bk-logo-icon.png"
+            alt="BK Guest Lodge"
+            width={36}
+            height={36}
+            className="rounded-md"
+            priority
+          />
           BK Guest Lodge
         </Link>
 

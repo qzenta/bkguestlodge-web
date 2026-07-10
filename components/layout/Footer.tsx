@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -6,8 +7,14 @@ export default function Footer() {
       <div className="mx-auto max-w-8xl px-4 py-10 md:px-8">
         <div className="grid gap-8 md:grid-cols-3">
           <div>
-            <p className="font-display text-lg font-semibold">BK Guest Lodge</p>
-            <p className="mt-2 font-body text-sm text-warm-sand/80">
+            <Image
+              src="/brand/bk-logo-full.png"
+              alt="BK Guest Lodge — Stays for Travellers. Homes for Students."
+              width={160}
+              height={160}
+              className="rounded-lg"
+            />
+            <p className="mt-4 font-body text-sm text-warm-sand/80">
               8 Meurant Street, Vanderbijlpark S E 1, Gauteng, 1911
             </p>
             <p className="mt-1 font-body text-sm text-warm-sand/80">
