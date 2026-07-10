@@ -9,11 +9,14 @@ export interface RoomType {
   id: string;
   name: string;
   division: Division;
-  photo: string;
+  photo?: string;
   price: number | null;
-  priceUnit: "night" | "month";
+  priceUnit: "night" | "month" | "day rest";
   amenities: string[];
   leaseTerm?: string;
+  // Whole card unconfirmed (no real data at all yet) — distinct from
+  // individual fields (photo, amenities) being unconfirmed while
+  // name/price are real. See RoomTypeCard for per-field pending handling.
   pending?: boolean;
 }
 

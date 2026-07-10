@@ -3,6 +3,8 @@ import { Spectral, Inter, Space_Grotesk } from "next/font/google";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import WhatsAppCTA from "@/components/layout/WhatsAppCTA";
+import JsonLd from "@/components/shared/JsonLd";
+import { SITE_URL, businessAddress, businessPhone, cipcRegistrationNumber } from "@/lib/seo";
 import "./globals.css";
 
 const spectral = Spectral({
@@ -31,6 +33,24 @@ export const metadata: Metadata = {
     "Comfortable short stays and safe student housing at BK Guest Lodge, Vanderbijlpark. Book your stay or apply for accommodation today.",
 };
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "BK Guest Lodge",
+  url: SITE_URL,
+  logo: `${SITE_URL}/brand/bk-logo-icon.png`,
+  telephone: businessPhone,
+  address: {
+    "@type": "PostalAddress",
+    ...businessAddress,
+  },
+  identifier: {
+    "@type": "PropertyValue",
+    name: "CIPC Registration Number",
+    value: cipcRegistrationNumber,
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -41,6 +61,7 @@ export default function RootLayout({
       <body
         className={`${spectral.variable} ${inter.variable} ${spaceGrotesk.variable} font-body antialiased`}
       >
+        <JsonLd data={organizationJsonLd} />
         <Nav />
         {children}
         <Footer />

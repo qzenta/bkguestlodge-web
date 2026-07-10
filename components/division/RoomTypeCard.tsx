@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { RoomType } from "@/lib/content/types";
-import PendingNote from "@/components/shared/PendingNote";
+import PendingNote, { isPending } from "@/components/shared/PendingNote";
 
 const accentClass: Record<RoomType["division"], string> = {
   "guest-lodge": "border-ochre-clay",
@@ -21,11 +21,19 @@ export default function RoomTypeCard({ room }: { room: RoomType }) {
     );
   }
 
+  const amenitiesArePending = room.amenities.length > 0 && isPending(room.amenities[0]);
+
   return (
     <div className={`overflow-hidden rounded-lg border-t-4 bg-soft-ivory shadow-sm ${accentClass[room.division]}`}>
-      <div className="relative aspect-[4/3] bg-warm-sand">
-        <Image src={room.photo} alt={room.name} fill className="object-cover" />
-      </div>
+      {room.photo ? (
+        <div className="relative aspect-[4/3] bg-warm-sand">
+          <Image src={room.photo} alt={room.name} fill className="object-cover" />
+        </div>
+      ) : (
+        <div className="flex aspect-[4/3] items-center justify-center bg-warm-sand p-4">
+          <PendingNote text="TODO: pending client content — photo" />
+        </div>
+      )}
       <div className="p-5">
         <h3 className="font-display text-lg font-semibold text-charcoal-ink">{room.name}</h3>
         <p className="mt-1 font-utility text-sm text-charcoal-ink">
@@ -34,11 +42,17 @@ export default function RoomTypeCard({ room }: { room: RoomType }) {
         {room.leaseTerm && (
           <p className="mt-1 font-body text-xs text-charcoal-ink/60">{room.leaseTerm}</p>
         )}
-        <ul className="mt-3 space-y-1 font-body text-sm text-charcoal-ink/80">
-          {room.amenities.map((amenity) => (
-            <li key={amenity}>{amenity}</li>
-          ))}
-        </ul>
+        <div className="mt-3">
+          {amenitiesArePending ? (
+            <PendingNote text="TODO: pending client content — amenities" />
+          ) : (
+            <ul className="space-y-1 font-body text-sm text-charcoal-ink/80">
+              {room.amenities.map((amenity) => (
+                <li key={amenity}>{amenity}</li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -30,6 +30,9 @@ export default function Home() {
           href="/accommodation/student-accommodation"
           className="group flex flex-1 flex-col items-center justify-center gap-3 bg-cornflower-dusk px-6 py-16 text-center text-soft-ivory transition hover:opacity-95 md:py-0"
         >
+          <span className="rounded-full bg-slate-teal px-3 py-1 font-utility text-xs font-semibold uppercase tracking-wide">
+            Opening January 2027
+          </span>
           <span className="font-display text-3xl font-semibold md:text-4xl">Student Accommodation</span>
           <span className="max-w-xs font-body text-sm">
             Safe, affordable student housing, close to campus.

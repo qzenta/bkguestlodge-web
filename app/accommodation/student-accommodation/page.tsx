@@ -3,7 +3,6 @@ import RoomTypeCard from "@/components/division/RoomTypeCard";
 import ApplicationCTA from "@/components/division/ApplicationCTA";
 import PendingNote from "@/components/shared/PendingNote";
 import { roomTypes } from "@/lib/content/room-types";
-import { PENDING_CONTENT } from "@/lib/content/types";
 
 export const metadata: Metadata = {
   title: {
@@ -20,7 +19,11 @@ export default function StudentAccommodationPage() {
     <main className="mx-auto max-w-8xl px-4 py-16 md:px-8">
       <div className="grid gap-10 md:grid-cols-3">
         <div className="md:col-span-2">
-          <h1 className="font-display text-3xl font-semibold text-charcoal-ink">
+          <span className="inline-block rounded-full bg-cornflower-dusk px-4 py-1 font-utility text-xs font-semibold uppercase tracking-wide text-soft-ivory">
+            Opening January 2027
+          </span>
+
+          <h1 className="mt-3 font-display text-3xl font-semibold text-charcoal-ink">
             Safe, settled student living
           </h1>
 
@@ -51,7 +54,7 @@ export default function StudentAccommodationPage() {
         </div>
 
         <div>
-          <ApplicationCTA intakePeriod={PENDING_CONTENT} />
+          <ApplicationCTA intakePeriod="Opening January 2027 — first intake" />
         </div>
       </div>
     </main>
