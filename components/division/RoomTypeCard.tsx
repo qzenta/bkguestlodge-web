@@ -36,9 +36,19 @@ export default function RoomTypeCard({ room }: { room: RoomType }) {
       )}
       <div className="p-5">
         <h3 className="font-display text-lg font-semibold text-charcoal-ink">{room.name}</h3>
-        <p className="mt-1 font-utility text-sm text-charcoal-ink">
-          R{room.price?.toLocaleString()} / {room.priceUnit}
-        </p>
+        {room.rates ? (
+          <ul className="mt-1 space-y-0.5 font-utility text-sm text-charcoal-ink">
+            {room.rates.map((rate) => (
+              <li key={rate.label}>
+                R{rate.price.toLocaleString()} — {rate.label}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="mt-1 font-utility text-sm text-charcoal-ink">
+            R{room.price?.toLocaleString()} / {room.priceUnit}
+          </p>
+        )}
         {room.leaseTerm && (
           <p className="mt-1 font-body text-xs text-charcoal-ink/60">{room.leaseTerm}</p>
         )}

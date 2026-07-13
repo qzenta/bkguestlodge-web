@@ -9,9 +9,10 @@ export const metadata: Metadata = {
     "Learn about BK Guest Lodge — a registered accommodation provider in Vanderbijlpark serving both short-stay guests and students.",
 };
 
-// Copy from BKGL_Content_Draft.md. Founding-story sentence and the
-// years-in-operation trust signal are bracketed in the draft — do not
-// invent them, wait for Beauty's actual words.
+// Founding-story paragraph is BKGL-CONTENT-001 §5's generic draft,
+// approved by Beauty Tshabalala 13 Jul 2026 as reasonable placeholder
+// copy in the site's tone — not real biographical history. Years-in-
+// operation trust signal isn't covered by that document, stays pending.
 export default function AboutPage() {
   return (
     <main className="mx-auto max-w-8xl px-4 py-16 md:px-8">
@@ -21,11 +22,18 @@ export default function AboutPage() {
       <p className="mt-4 max-w-2xl font-body text-charcoal-ink/80">
         BK Guest Lodge is based at 8 Meurant Street, Vanderbijlpark, under the direction of
         Beauty Fikile Tshabalala. We serve two kinds of guest under one roof: those staying a
-        few nights, and those staying a semester.
+        few nights, and those staying a semester — together, our Guest Lodge and Student
+        Accommodation divisions make up BK Guest Lodge&rsquo;s Accommodation Solutions.
       </p>
-      <div className="mt-4">
-        <PendingNote text="TODO: pending client content — founding story / why BK Guest Lodge exists" />
-      </div>
+      <p className="mt-4 max-w-2xl font-body text-charcoal-ink/80">
+        BK Guest Lodge was established to meet a simple need in Vanderbijlpark: comfortable,
+        secure, and affordable accommodation for both short-stay visitors and — from January
+        2027 — students in the Vaal region. We understand that whether you&rsquo;re in town for
+        work, visiting family, or looking for a safe place to stay while studying, the details
+        matter: reliable power and water, a secure environment, and a warm welcome. That&rsquo;s
+        what we set out to build, one house with two doors — one for travellers, one for
+        students.
+      </p>
 
       <h2 className="mt-10 font-utility text-sm uppercase tracking-wide text-slate-teal">
         Trust

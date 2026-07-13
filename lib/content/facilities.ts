@@ -1,29 +1,67 @@
 import { PENDING_CONTENT, type Facility } from "./types";
 
-// Draft list from BKGL_Content_Draft.md — every item was bracketed
-// ("pending final list" / "not yet verified complete"). Photos below are
-// real (guest-lodge side, confirmed by Daniel 10 Jul 2026), but
-// descriptions stay PENDING_CONTENT until the client confirms actual copy —
-// a photo proves the facility exists, not what we're allowed to say about it.
+// Confirmed facility list per BKGL-CONTENT-001 §3, approved by Beauty
+// Tshabalala 13 Jul 2026 (including the items the draft had marked
+// "confirm" — her sign-off on the document as a whole is the
+// confirmation). Photos are real where already staged (Braai area,
+// Secure parking, confirmed by Daniel 10 Jul 2026).
+//
+// Pool is deliberately NOT included here: it was discovered in the photo
+// intake but was never part of BKGL-CONTENT-001's own list, so Beauty's
+// sign-off on that document doesn't cover it — stays pending separately.
 export const facilities: Facility[] = [
   {
-    icon: "flame",
-    title: "Braai area",
-    description: PENDING_CONTENT,
-    photo: "/images/shared/braai-area.jpg",
-    pending: true,
+    icon: "wifi",
+    title: "Free Wi-Fi",
+    description: "Free Wi-Fi throughout the property.",
   },
   {
     icon: "car",
-    title: "Secure parking",
-    description: PENDING_CONTENT,
+    title: "Secure on-site parking",
+    description: "Secure on-site parking available for all guests.",
     photo: "/images/shared/exterior-pool-parking.jpg",
-    pending: true,
   },
-  { icon: "zap", title: "Backup water/power", description: PENDING_CONTENT, pending: true },
-  { icon: "wifi", title: "Wi-Fi", description: PENDING_CONTENT, pending: true },
-  { icon: "shirt", title: "Laundry facilities", description: PENDING_CONTENT, pending: true },
-  { icon: "book-open", title: "Communal study/common area", description: PENDING_CONTENT, pending: true },
+  {
+    icon: "zap",
+    title: "Backup power",
+    description: "Backup power to keep you covered during load-shedding.",
+  },
+  {
+    icon: "droplet",
+    title: "Backup water supply",
+    description: "Backup water supply in place alongside backup power.",
+  },
+  {
+    icon: "wind",
+    title: "Air conditioning / fans",
+    description: "Available room-dependent — ask us when booking.",
+  },
+  {
+    icon: "sparkles",
+    title: "Daily housekeeping",
+    description: "Daily housekeeping included for all guests.",
+  },
+  {
+    icon: "coffee",
+    title: "Tea/coffee facilities",
+    description: "Tea and coffee facilities in-room.",
+  },
+  {
+    icon: "shirt",
+    title: "On-site laundry service",
+    description: "On-site laundry service available.",
+  },
+  {
+    icon: "flame",
+    title: "Braai area",
+    description: "Braai/outdoor area for guests to use.",
+    photo: "/images/shared/braai-area.jpg",
+  },
+  {
+    icon: "shield",
+    title: "24-hour security",
+    description: "24-hour security and access control.",
+  },
   {
     icon: "waves",
     title: "Pool",

@@ -35,4 +35,4 @@ NEXT_PUBLIC_SITE_URL=https://www.bkguestlodge.co.za
 ## Notes
 
 - Static generation for every route except `/api/contact` (per BKGL-TA-001's OCI shared-compute constraints).
-- Placeholder copy and content only — `public/images/` is empty pending BKGL-CONTENT-001 (photography spec). "Accommodation Solutions" umbrella positioning is not yet used in visible copy; pending sign-off from Beauty Tshabalala.
+- BKGL-CONTENT-001 (Content/Photography Spec), BKGL-AR-001, BKGL-RISK-001, and BKGL-GOV-001 approved by Beauty Tshabalala and Daniel, 13 July 2026 — filed in `atlas-docs/bkgl-series/`. Room categories, facility list, most FAQ answers, and the "Accommodation Solutions" umbrella framing are now live content. Still pending: exact Day Rest hours, the ArcelorMittal/Sedibeng College proximity claim (explicit hold, not yet verified), individual room photo identification, and the Pool facility (discovered outside BKGL-CONTENT-001's scope, not yet confirmed).

@@ -55,6 +55,11 @@ export default function GuestLodgePage() {
             .
           </p>
 
+          <p className="mt-4 max-w-2xl font-body text-sm text-charcoal-ink/70">
+            <strong>Day Rest</strong> — use of a room during the day (no overnight stay).{" "}
+            <strong>Sleepover</strong> — full overnight stay, check-in to check-out.
+          </p>
+
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
             {rooms.map((room) => (
               <RoomTypeCard key={room.id} room={room} />

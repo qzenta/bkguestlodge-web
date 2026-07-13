@@ -47,10 +47,10 @@ export default function Home() {
           One address on Meurant Street. Two ways to call it home.
         </h1>
         <p className="mx-auto mt-4 max-w-2xl font-body text-charcoal-ink/80">
-          BK Guest Lodge welcomes short-stay guests — contractors, business travellers, and
-          families passing through Vanderbijlpark — alongside students who call it home for
-          the term. Whichever door you&rsquo;re here for, you&rsquo;ll find the same standard
-          of care.
+          BK Guest Lodge&rsquo;s Accommodation Solutions welcome short-stay guests —
+          contractors, business travellers, and families passing through Vanderbijlpark —
+          alongside students who call it home for the term. Whichever door you&rsquo;re here
+          for, you&rsquo;ll find the same standard of care.
         </p>
       </section>
 
