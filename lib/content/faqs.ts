@@ -1,11 +1,10 @@
 import { PENDING_CONTENT, type FaqItem } from "./types";
 
 // Guest Lodge answers per BKGL-CONTENT-001 §4, approved by Beauty
-// Tshabalala 13 Jul 2026 — except two items the document itself left
-// bracketed/unresolved, which stay pending regardless of the broader
-// sign-off: exact Day Rest hours (§2/§8 open question 3), and the
-// ArcelorMittal/Sedibeng College proximity claim (explicit "Hold — do not
-// publish until verified" in §4, R2 in the risk register).
+// Tshabalala 13 Jul 2026. Day Rest exact hours and the proximity claim
+// were confirmed separately, 13 Jul 2026: hours set to 08:00-18:00 per
+// the document's own suggested default; proximity confirmed directly
+// (close to both ArcelorMittal and Sedibeng College), closing R2.
 export const faqs: FaqItem[] = [
   {
     category: "general",
@@ -15,8 +14,8 @@ export const faqs: FaqItem[] = [
   {
     category: "guest-lodge",
     question: "What time is check-in/check-out?",
-    answer: `For overnight Sleepover stays, check-in from 14:00, check-out by 10:00. Day Rest bookings are for daytime use only — ${PENDING_CONTENT} (exact hours). Early check-in/late check-out may be available on request.`,
-    pending: true,
+    answer:
+      "For overnight Sleepover stays, check-in from 14:00, check-out by 10:00. Day Rest bookings run 08:00–18:00. Early check-in/late check-out may be available on request.",
   },
   {
     category: "guest-lodge",
@@ -48,8 +47,7 @@ export const faqs: FaqItem[] = [
   {
     category: "guest-lodge",
     question: "How close are you to ArcelorMittal / Sedibeng College?",
-    answer: PENDING_CONTENT,
-    pending: true,
+    answer: "We're close to both ArcelorMittal and Sedibeng College, making BK Guest Lodge a convenient base whether you're here for work or study.",
   },
   {
     category: "student-accommodation",

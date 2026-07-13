@@ -28,9 +28,8 @@ export default function StudentAccommodationPage() {
           </h1>
 
           <p className="mt-4 max-w-2xl font-body text-charcoal-ink/80">
-            Close to{" "}
-            <PendingNote text="TODO: pending client content — confirm campus proximity (e.g. Sedibeng College / Vaal-region campuses)" />
-            , with the security and structure that make it easier to focus on your studies.
+            Close to Sedibeng College, with the security and structure that make it easier to
+            focus on your studies.
           </p>
 
           <p className="mt-4 max-w-2xl font-body text-charcoal-ink/80">

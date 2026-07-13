@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import RoomTypeCard from "@/components/division/RoomTypeCard";
 import BookingCTA from "@/components/division/BookingCTA";
-import PendingNote from "@/components/shared/PendingNote";
 import JsonLd from "@/components/shared/JsonLd";
 import { roomTypes } from "@/lib/content/room-types";
 import { SITE_URL, businessAddress, businessPhone } from "@/lib/seo";
@@ -50,9 +49,8 @@ export default function GuestLodgePage() {
           </h1>
           <p className="mt-4 max-w-2xl font-body text-charcoal-ink/80">
             Whether you&rsquo;re here for a contract, a client visit, or a weekend away, Guest
-            Lodge gives you a comfortable, secure base — close to{" "}
-            <PendingNote text="TODO: pending client content — confirm local landmarks (e.g. ArcelorMittal)" />
-            .
+            Lodge gives you a comfortable, secure base — close to both ArcelorMittal and
+            Sedibeng College.
           </p>
 
           <p className="mt-4 max-w-2xl font-body text-sm text-charcoal-ink/70">
