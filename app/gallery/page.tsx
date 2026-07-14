@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import GalleryGrid from "@/components/shared/GalleryGrid";
 import PageHero from "@/components/shared/PageHero";
 import EnquiryCTA from "@/components/shared/EnquiryCTA";
@@ -34,6 +35,21 @@ export default function GalleryPage() {
             <GalleryGrid images={galleryImages} />
           </div>
         )}
+
+        <div className="mt-10 flex flex-wrap gap-4">
+          <Link
+            href="/accommodation/guest-lodge"
+            className="font-utility text-sm font-semibold text-slate-teal underline underline-offset-4 hover:text-cornflower-dusk"
+          >
+            View our rooms →
+          </Link>
+          <Link
+            href="/facilities"
+            className="font-utility text-sm font-semibold text-slate-teal underline underline-offset-4 hover:text-cornflower-dusk"
+          >
+            What&rsquo;s included →
+          </Link>
+        </div>
 
         <EnquiryCTA />
       </div>

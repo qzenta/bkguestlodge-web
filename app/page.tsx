@@ -92,6 +92,12 @@ export default function Home() {
               <FacilityCard key={facility.title} facility={facility} />
             ))}
           </div>
+          <Link
+            href="/facilities"
+            className="mt-6 inline-block font-utility text-sm font-semibold text-slate-teal underline underline-offset-4 hover:text-cornflower-dusk"
+          >
+            See all facilities →
+          </Link>
         </Reveal>
       </section>
 

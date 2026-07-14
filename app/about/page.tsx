@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import PendingNote from "@/components/shared/PendingNote";
 import PageHero from "@/components/shared/PageHero";
 import EnquiryCTA from "@/components/shared/EnquiryCTA";
@@ -56,6 +57,27 @@ export default function AboutPage() {
             <PendingNote text="TODO: pending client content — years in operation / local ties to Vanderbijlpark" />
           </li>
         </ul>
+
+        <div className="mt-10 flex flex-wrap gap-4">
+          <Link
+            href="/accommodation/guest-lodge"
+            className="font-utility text-sm font-semibold text-slate-teal underline underline-offset-4 hover:text-cornflower-dusk"
+          >
+            View our rooms →
+          </Link>
+          <Link
+            href="/facilities"
+            className="font-utility text-sm font-semibold text-slate-teal underline underline-offset-4 hover:text-cornflower-dusk"
+          >
+            See what&rsquo;s included →
+          </Link>
+          <Link
+            href="/gallery"
+            className="font-utility text-sm font-semibold text-slate-teal underline underline-offset-4 hover:text-cornflower-dusk"
+          >
+            Photo gallery →
+          </Link>
+        </div>
 
         <EnquiryCTA />
       </div>

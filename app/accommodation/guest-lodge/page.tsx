@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import RoomTypeCard from "@/components/division/RoomTypeCard";
 import BookingCTA from "@/components/division/BookingCTA";
 import JsonLd from "@/components/shared/JsonLd";
@@ -43,9 +44,12 @@ export default function GuestLodgePage() {
               Sedibeng College.
             </p>
 
-            <p className="mt-4 max-w-2xl font-body text-sm text-charcoal-ink/70">
-              <strong>Day Rest</strong> — use of a room during the day (no overnight stay).{" "}
-              <strong>Sleepover</strong> — full overnight stay, check-in to check-out.
+            <h2 className="mt-8 font-display text-lg font-semibold text-charcoal-ink">
+              What are the rates?
+            </h2>
+            <p className="mt-2 max-w-2xl font-body text-sm text-charcoal-ink/70">
+              <strong>Day Rest (R450)</strong> — use of a room during the day, 08:00–18:00, no overnight stay.{" "}
+              <strong>Sleepover (R600)</strong> — full overnight stay, check-in from 14:00, check-out by 10:00.
             </p>
 
             <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -77,6 +81,33 @@ export default function GuestLodgePage() {
               <AudienceCard key={audience.label} audience={audience} />
             ))}
           </div>
+        </div>
+
+        <div className="mt-10 flex flex-wrap gap-4">
+          <Link
+            href="/facilities"
+            className="font-utility text-sm font-semibold text-slate-teal underline underline-offset-4 hover:text-cornflower-dusk"
+          >
+            What&rsquo;s included →
+          </Link>
+          <Link
+            href="/explore-the-area"
+            className="font-utility text-sm font-semibold text-slate-teal underline underline-offset-4 hover:text-cornflower-dusk"
+          >
+            Explore the area →
+          </Link>
+          <Link
+            href="/gallery"
+            className="font-utility text-sm font-semibold text-slate-teal underline underline-offset-4 hover:text-cornflower-dusk"
+          >
+            Photo gallery →
+          </Link>
+          <Link
+            href="/faqs"
+            className="font-utility text-sm font-semibold text-slate-teal underline underline-offset-4 hover:text-cornflower-dusk"
+          >
+            FAQs →
+          </Link>
         </div>
       </div>
     </main>

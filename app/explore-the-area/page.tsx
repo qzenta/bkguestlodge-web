@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import AttractionCard from "@/components/shared/AttractionCard";
 import Reveal from "@/components/shared/Reveal";
 import EnquiryCTA from "@/components/shared/EnquiryCTA";
@@ -20,7 +21,7 @@ export default function ExploreTheAreaPage() {
   return (
     <main className="mx-auto max-w-8xl px-4 py-16 md:px-8">
       <JsonLd data={exploreBreadcrumb} />
-      <h1 className="font-display text-3xl font-semibold text-charcoal-ink">Explore the area</h1>
+      <h1 className="font-display text-3xl font-semibold text-charcoal-ink">What&rsquo;s near BK Guest Lodge in Vanderbijlpark?</h1>
       <p className="mt-4 max-w-2xl font-body text-charcoal-ink/80">
         BK Guest Lodge sits close to some of the Vaal region&rsquo;s best-known spots — whether
         you&rsquo;re here with the family, here to study, or just here for the weekend.
@@ -32,6 +33,21 @@ export default function ExploreTheAreaPage() {
           ))}
         </div>
       </Reveal>
+
+      <div className="mt-10 flex flex-wrap gap-4">
+        <Link
+          href="/accommodation/guest-lodge"
+          className="font-utility text-sm font-semibold text-slate-teal underline underline-offset-4 hover:text-cornflower-dusk"
+        >
+          View our rooms →
+        </Link>
+        <Link
+          href="/accommodation/near-emerald-resort"
+          className="font-utility text-sm font-semibold text-slate-teal underline underline-offset-4 hover:text-cornflower-dusk"
+        >
+          Staying near Emerald Resort? →
+        </Link>
+      </div>
 
       <EnquiryCTA />
     </main>
