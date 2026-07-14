@@ -29,20 +29,22 @@ export default function ContactPage() {
           a question — reach out however&rsquo;s easiest for you.
         </p>
 
-        <dl className="mt-6 space-y-1 font-body text-sm text-charcoal-ink/80">
-          <div>
-            <dt className="inline font-utility font-semibold text-charcoal-ink">WhatsApp: </dt>
-            <dd className="inline">072 080 0327</dd>
-          </div>
-          <div>
-            <dt className="inline font-utility font-semibold text-charcoal-ink">Email: </dt>
-            <dd className="inline">info@bkguestlodge.co.za</dd>
-          </div>
-          <div>
-            <dt className="inline font-utility font-semibold text-charcoal-ink">Address: </dt>
-            <dd className="inline">8 Meurant Street, Vanderbijlpark S E 1, Vanderbijlpark, Gauteng, 1911</dd>
-          </div>
-        </dl>
+        <address className="mt-6 not-italic">
+          <dl className="space-y-1 font-body text-sm text-charcoal-ink/80">
+            <div>
+              <dt className="inline font-utility font-semibold text-charcoal-ink">WhatsApp: </dt>
+              <dd className="inline">072 080 0327</dd>
+            </div>
+            <div>
+              <dt className="inline font-utility font-semibold text-charcoal-ink">Email: </dt>
+              <dd className="inline">info@bkguestlodge.co.za</dd>
+            </div>
+            <div>
+              <dt className="inline font-utility font-semibold text-charcoal-ink">Address: </dt>
+              <dd className="inline">8 Meurant Street, Vanderbijlpark S E 1, Vanderbijlpark, Gauteng, 1911</dd>
+            </div>
+          </dl>
+        </address>
 
         <div className="mt-10">
           <Suspense fallback={null}>

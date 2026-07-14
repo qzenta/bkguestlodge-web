@@ -28,23 +28,36 @@ export default function FAQAccordion({ faqs }: { faqs: FaqItem[] }) {
                 const isOpen = openKey === key;
                 return (
                   <div key={key}>
-                    <button
-                      type="button"
-                      className="flex w-full items-center justify-between px-5 py-4 text-left font-body text-sm font-medium text-charcoal-ink"
-                      aria-expanded={isOpen}
-                      onClick={() => setOpenKey(isOpen ? null : key)}
-                    >
-                      {faq.question}
-                    </button>
-                    {isOpen && (
-                      <p
-                        className={`px-5 pb-4 font-body text-sm ${
-                          faq.pending ? "italic text-ochre-clay" : "text-charcoal-ink/80"
-                        }`}
+                    <h3>
+                      <button
+                        type="button"
+                        className="flex w-full items-center justify-between px-5 py-4 text-left font-body text-sm font-medium text-charcoal-ink"
+                        aria-expanded={isOpen}
+                        aria-controls={`faq-panel-${key}`}
+                        onClick={() => setOpenKey(isOpen ? null : key)}
                       >
-                        {faq.answer}
-                      </p>
-                    )}
+                        {faq.question}
+                        <span aria-hidden="true" className="ml-2 text-charcoal-ink/40">
+                          {isOpen ? "−" : "+"}
+                        </span>
+                      </button>
+                    </h3>
+                    <div
+                      id={`faq-panel-${key}`}
+                      role="region"
+                      aria-labelledby={`faq-panel-${key}`}
+                      hidden={!isOpen}
+                    >
+                      {isOpen && (
+                        <p
+                          className={`px-5 pb-4 font-body text-sm ${
+                            faq.pending ? "italic text-ochre-clay" : "text-charcoal-ink/80"
+                          }`}
+                        >
+                          {faq.answer}
+                        </p>
+                      )}
+                    </div>
                   </div>
                 );
               })}
