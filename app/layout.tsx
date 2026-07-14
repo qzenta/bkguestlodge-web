@@ -33,6 +33,9 @@ export const metadata: Metadata = {
   },
   description:
     "BK Guest Lodge's Accommodation Solutions — comfortable short stays and safe student housing in Vanderbijlpark. Book your stay or apply for accommodation today.",
+  other: {
+    "theme-color": "#3d5a5e",
+  },
 };
 
 const organizationJsonLd = {

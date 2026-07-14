@@ -11,7 +11,7 @@ export default function FacilityCard({ facility }: { facility: Facility }) {
     >
       {facility.photo && (
         <div className="relative aspect-[4/3] bg-warm-sand">
-          <Image src={facility.photo} alt={facility.title} fill className="object-cover" />
+          <Image src={facility.photo} alt={facility.title} fill sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover" />
         </div>
       )}
       <div className="p-6">

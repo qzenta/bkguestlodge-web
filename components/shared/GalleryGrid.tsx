@@ -36,7 +36,7 @@ export default function GalleryGrid({ images }: { images: GalleryImage[] }) {
       <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3">
         {visible.map((img) => (
           <div key={img.src} className="relative aspect-[4/3] overflow-hidden rounded-lg bg-soft-ivory">
-            <Image src={img.src} alt={img.alt} fill className="object-cover" loading="lazy" />
+            <Image src={img.src} alt={img.alt} fill sizes="(min-width: 768px) 33vw, 50vw" className="object-cover" loading="lazy" />
           </div>
         ))}
       </div>

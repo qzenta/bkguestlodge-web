@@ -6,7 +6,7 @@ export default function AttractionCard({ attraction }: { attraction: Attraction 
     <div className="overflow-hidden rounded-lg bg-soft-ivory shadow-sm">
       {attraction.photo ? (
         <div className="relative aspect-[4/3] bg-warm-sand">
-          <Image src={attraction.photo} alt={attraction.name} fill className="object-cover" />
+          <Image src={attraction.photo} alt={attraction.name} fill sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover" />
         </div>
       ) : (
         <div className="flex aspect-[4/3] items-center justify-center border-b border-dashed border-ochre-clay/40 bg-warm-sand">
