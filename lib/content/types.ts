@@ -56,3 +56,10 @@ export interface GalleryImage {
   alt: string;
   division: Division | "shared";
 }
+
+export interface Attraction {
+  name: string;
+  category: string;
+  description: string;
+  photo?: string;
+}

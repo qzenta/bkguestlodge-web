@@ -18,5 +18,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/gallery`, lastModified, priority: 0.7 },
     { url: `${SITE_URL}/faqs`, lastModified, priority: 0.7 },
     { url: `${SITE_URL}/about`, lastModified, priority: 0.6 },
+    { url: `${SITE_URL}/explore-the-area`, lastModified, priority: 0.6 },
   ];
 }

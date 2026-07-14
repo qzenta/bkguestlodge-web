@@ -11,6 +11,7 @@ const links = [
   { href: "/accommodation/student-accommodation", label: "Student Accommodation" },
   { href: "/facilities", label: "Facilities" },
   { href: "/gallery", label: "Gallery" },
+  { href: "/explore-the-area", label: "Explore the Area" },
   { href: "/faqs", label: "FAQs" },
   { href: "/contact", label: "Contact" },
 ];

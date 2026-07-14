@@ -10,8 +10,8 @@ export default function Footer() {
             <Image
               src="/brand/bk-logo-full.png"
               alt="BK Guest Lodge — Stays for Travellers. Homes for Students."
-              width={160}
-              height={160}
+              width={72}
+              height={72}
               className="rounded-lg"
             />
             <p className="mt-4 font-body text-sm text-warm-sand/80">
