@@ -2,9 +2,11 @@ import type { Attraction } from "./types";
 
 // Real, verifiable Vanderbijlpark-area landmarks only — no invented
 // distances or travel times (none have been confirmed by the client).
-// Photos are pending: no licensed images of these specific places have
-// been sourced yet, so cards fall back to a text-only layout until real
-// or licensed photography is ready.
+// Photos: only added where a genuinely verified match for the specific
+// named place was found (free-license, no unclear rights) — Aquadome,
+// Emerald Animal World, and Vaal Mall had no real match on Unsplash/Pexels
+// (searches surfaced unrelated malls/venues, or Unsplash+ paid results),
+// so those stay text-only rather than use a mismatched substitute photo.
 export const attractions: Attraction[] = [
   {
     name: "Emerald Resort & Casino — Aquadome",
@@ -22,6 +24,7 @@ export const attractions: Attraction[] = [
     category: "Outdoors / Boating",
     description:
       "Boating and river cruises are available nearby via operators like Liquid Lounge and Stonehaven on Vaal.",
+    photo: "/images/stock/vaal-river.jpg",
   },
   {
     name: "Vaal Mall",

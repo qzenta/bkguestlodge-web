@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import GalleryGrid from "@/components/shared/GalleryGrid";
+import PageHero from "@/components/shared/PageHero";
 import { galleryImages } from "@/lib/content/gallery";
 
 export const metadata: Metadata = {
@@ -9,19 +10,25 @@ export const metadata: Metadata = {
 
 export default function GalleryPage() {
   return (
-    <main className="mx-auto max-w-8xl px-4 py-16 md:px-8">
-      <h1 className="font-display text-3xl font-semibold text-charcoal-ink">See BK Guest Lodge</h1>
+    <main>
+      <PageHero
+        src="/images/stock/gallery-hero.jpg"
+        alt="A cozy guesthouse lounge looking out onto a garden veranda"
+      />
+      <div className="mx-auto max-w-8xl px-4 py-16 md:px-8">
+        <h1 className="font-display text-3xl font-semibold text-charcoal-ink">See BK Guest Lodge</h1>
 
-      {galleryImages.length === 0 ? (
-        <p className="mt-4 max-w-xl font-body text-charcoal-ink/80">
-          Photos are on their way — check back soon, or message us on WhatsApp for a look
-          right now.
-        </p>
-      ) : (
-        <div className="mt-10">
-          <GalleryGrid images={galleryImages} />
-        </div>
-      )}
+        {galleryImages.length === 0 ? (
+          <p className="mt-4 max-w-xl font-body text-charcoal-ink/80">
+            Photos are on their way — check back soon, or message us on WhatsApp for a look
+            right now.
+          </p>
+        ) : (
+          <div className="mt-10">
+            <GalleryGrid images={galleryImages} />
+          </div>
+        )}
+      </div>
     </main>
   );
 }

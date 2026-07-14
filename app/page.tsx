@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import FacilityCard from "@/components/shared/FacilityCard";
 import PendingNote from "@/components/shared/PendingNote";
@@ -12,11 +13,20 @@ export default function Home() {
   return (
     <main>
       {/* Two Doors hero — stacks vertically on mobile */}
-      <section className="flex flex-col md:h-[70vh] md:flex-row">
-        <Reveal variant="scale" className="flex flex-1" delayMs={0}>
+      <section className="relative flex flex-col md:h-[70vh] md:flex-row">
+        <Image
+          src="/images/stock/homepage-hero.jpg"
+          alt="A South African farmhouse veranda at dusk"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+
+        <Reveal variant="scale" className="relative z-10 flex flex-1" delayMs={0}>
           <Link
             href="/accommodation/guest-lodge"
-            className="group flex flex-1 flex-col items-center justify-center gap-3 bg-ochre-clay px-6 py-16 text-center text-soft-ivory transition hover:opacity-95 md:py-0"
+            className="group flex flex-1 flex-col items-center justify-center gap-3 bg-ochre-clay/85 px-6 py-16 text-center text-soft-ivory transition hover:bg-ochre-clay/95 md:py-0"
           >
             <span className="font-display text-3xl font-semibold md:text-4xl">Guest Lodge</span>
             <span className="max-w-xs font-body text-sm">
@@ -26,16 +36,16 @@ export default function Home() {
           </Link>
         </Reveal>
 
-        <Reveal variant="scale" delayMs={150}>
-          <div className="flex items-center justify-center bg-slate-teal px-6 py-6 text-soft-ivory md:py-0">
+        <Reveal variant="scale" className="relative z-10" delayMs={150}>
+          <div className="flex items-center justify-center bg-slate-teal/90 px-6 py-6 text-soft-ivory md:py-0">
             <span className="font-display text-xl font-semibold md:text-2xl">BK Guest Lodge</span>
           </div>
         </Reveal>
 
-        <Reveal variant="scale" className="flex flex-1" delayMs={300}>
+        <Reveal variant="scale" className="relative z-10 flex flex-1" delayMs={300}>
           <Link
             href="/accommodation/student-accommodation"
-            className="group flex flex-1 flex-col items-center justify-center gap-3 bg-cornflower-dusk px-6 py-16 text-center text-soft-ivory transition hover:opacity-95 md:py-0"
+            className="group flex flex-1 flex-col items-center justify-center gap-3 bg-cornflower-dusk/85 px-6 py-16 text-center text-soft-ivory transition hover:bg-cornflower-dusk/95 md:py-0"
           >
             <span className="rounded-full bg-slate-teal px-3 py-1 font-utility text-xs font-semibold uppercase tracking-wide">
               Opening January 2027
