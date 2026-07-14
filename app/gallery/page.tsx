@@ -2,16 +2,21 @@ import type { Metadata } from "next";
 import GalleryGrid from "@/components/shared/GalleryGrid";
 import PageHero from "@/components/shared/PageHero";
 import EnquiryCTA from "@/components/shared/EnquiryCTA";
+import JsonLd from "@/components/shared/JsonLd";
 import { galleryImages } from "@/lib/content/gallery";
+import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "Gallery",
   description: "Photos of BK Guest Lodge's Guest Lodge rooms and Student Accommodation spaces.",
 };
 
+const galleryBreadcrumb = breadcrumbJsonLd([{ name: "Gallery", href: "/gallery" }]);
+
 export default function GalleryPage() {
   return (
     <main>
+      <JsonLd data={galleryBreadcrumb} />
       <PageHero
         src="/images/stock/gallery-hero.jpg"
         alt="A cozy guesthouse lounge looking out onto a garden veranda"

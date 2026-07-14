@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import JsonLd from "@/components/shared/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "Book Now",
   description: "Book your stay at BK Guest Lodge's Guest Lodge division.",
 };
 
+const bookNowBreadcrumb = breadcrumbJsonLd([{ name: "Book Now", href: "/book-now" }]);
+
 export default function BookNowPage() {
   return (
     <main className="mx-auto max-w-8xl px-4 py-16 text-center md:px-8">
+      <JsonLd data={bookNowBreadcrumb} />
       <h1 className="font-display text-3xl font-semibold text-charcoal-ink">Ready to stay?</h1>
       <p className="mt-4 font-body text-charcoal-ink/80">
         Let us know which you&rsquo;re here for, and we&rsquo;ll take it from there.

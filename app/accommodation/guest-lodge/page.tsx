@@ -6,7 +6,7 @@ import PageHero from "@/components/shared/PageHero";
 import AudienceCard from "@/components/shared/AudienceCard";
 import { roomTypes } from "@/lib/content/room-types";
 import { audiences } from "@/lib/content/audiences";
-import { SITE_URL, businessAddress, businessPhone } from "@/lib/seo";
+import { lodgingBusinessJsonLd, breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: {
@@ -16,35 +16,17 @@ export const metadata: Metadata = {
     "Comfortable, secure short-stay accommodation in Vanderbijlpark — ideal for contractors, business travellers, and families.",
 };
 
-// priceRange and amenityFeature are real, client-confirmed data (10 Jul
-// 2026: R600 sleepover / R450 day rest). Amenities are limited to ones
-// with a real confirmed photo (Braai area, Secure parking) — Pool is
-// excluded here even though it has a photo too, since it's flagged
-// "New — confirm before publishing" in lib/content/facilities.ts and
-// structured data is a publish surface same as visible copy.
-const lodgingBusinessJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "LodgingBusiness",
-  name: "BK Guest Lodge",
-  url: `${SITE_URL}/accommodation/guest-lodge`,
-  telephone: businessPhone,
-  address: {
-    "@type": "PostalAddress",
-    ...businessAddress,
-  },
-  priceRange: "R450–R600",
-  amenityFeature: [
-    { "@type": "LocationFeatureSpecification", name: "Braai area", value: true },
-    { "@type": "LocationFeatureSpecification", name: "Secure parking", value: true },
-  ],
-};
+const guestLodgeBreadcrumb = breadcrumbJsonLd([
+  { name: "Guest Lodge", href: "/accommodation/guest-lodge" },
+]);
 
 export default function GuestLodgePage() {
   const rooms = roomTypes.filter((room) => room.division === "guest-lodge");
 
   return (
     <main>
-      <JsonLd data={lodgingBusinessJsonLd} />
+      <JsonLd data={lodgingBusinessJsonLd()} />
+      <JsonLd data={guestLodgeBreadcrumb} />
       <PageHero
         src="/images/stock/guest-lodge-hero.jpg"
         alt="A South African guesthouse veranda lit warmly at dusk"

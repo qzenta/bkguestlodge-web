@@ -3,8 +3,10 @@ import { notFound } from "next/navigation";
 import PageHero from "@/components/shared/PageHero";
 import EnquiryCTA from "@/components/shared/EnquiryCTA";
 import AudienceCard from "@/components/shared/AudienceCard";
+import JsonLd from "@/components/shared/JsonLd";
 import { localSeoPages } from "@/lib/content/local-seo";
 import { audiences } from "@/lib/content/audiences";
+import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export function generateStaticParams() {
   return localSeoPages.map((page) => ({ slug: page.slug }));
@@ -38,8 +40,13 @@ export default async function LocalSeoPage({
     ? audiences.find((a) => a.label === page.relatedAudience)
     : undefined;
 
+  const pageBreadcrumb = breadcrumbJsonLd([
+    { name: page.h1, href: `/accommodation/${page.slug}` },
+  ]);
+
   return (
     <main>
+      <JsonLd data={pageBreadcrumb} />
       <PageHero
         src="/images/stock/guest-lodge-hero.jpg"
         alt="A South African guesthouse veranda lit warmly at dusk"

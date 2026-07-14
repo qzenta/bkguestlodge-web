@@ -3,7 +3,9 @@ import RoomTypeCard from "@/components/division/RoomTypeCard";
 import ApplicationCTA from "@/components/division/ApplicationCTA";
 import PendingNote from "@/components/shared/PendingNote";
 import PageHero from "@/components/shared/PageHero";
+import JsonLd from "@/components/shared/JsonLd";
 import { roomTypes } from "@/lib/content/room-types";
+import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: {
@@ -13,11 +15,16 @@ export const metadata: Metadata = {
     "Student accommodation opening January 2027 in Vanderbijlpark, close to Vaal-region campuses — safe, affordable, secure.",
 };
 
+const studentBreadcrumb = breadcrumbJsonLd([
+  { name: "Student Accommodation", href: "/accommodation/student-accommodation" },
+]);
+
 export default function StudentAccommodationPage() {
   const rooms = roomTypes.filter((room) => room.division === "student-accommodation");
 
   return (
     <main>
+      <JsonLd data={studentBreadcrumb} />
       <PageHero
         src="/images/stock/student-accommodation-hero.jpg"
         alt="A cozy, sunlit student bedroom with a study desk"

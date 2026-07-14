@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import ContactForm from "@/components/shared/ContactForm";
 import PageHero from "@/components/shared/PageHero";
+import JsonLd from "@/components/shared/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: {
@@ -10,9 +12,12 @@ export const metadata: Metadata = {
   description: "Get in touch with BK Guest Lodge via WhatsApp, email, or our contact form.",
 };
 
+const contactBreadcrumb = breadcrumbJsonLd([{ name: "Contact", href: "/contact" }]);
+
 export default function ContactPage() {
   return (
     <main>
+      <JsonLd data={contactBreadcrumb} />
       <PageHero
         src="/images/stock/contact-hero.jpg"
         alt="A warmly lit guesthouse veranda at dusk"

@@ -6,6 +6,7 @@ import WhatsAppCTA from "@/components/layout/WhatsAppCTA";
 import MobileStickyBar from "@/components/layout/MobileStickyBar";
 import JsonLd from "@/components/shared/JsonLd";
 import { SITE_URL, businessAddress, businessPhone, cipcRegistrationNumber } from "@/lib/seo";
+import { websiteJsonLd } from "@/lib/structured-data";
 import "./globals.css";
 
 const spectral = Spectral({
@@ -63,6 +64,7 @@ export default function RootLayout({
         className={`${spectral.variable} ${inter.variable} ${spaceGrotesk.variable} pb-14 font-body antialiased md:pb-0`}
       >
         <JsonLd data={organizationJsonLd} />
+        <JsonLd data={websiteJsonLd()} />
         <Nav />
         {children}
         <Footer />

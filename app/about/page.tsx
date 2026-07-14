@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import PendingNote from "@/components/shared/PendingNote";
 import PageHero from "@/components/shared/PageHero";
 import EnquiryCTA from "@/components/shared/EnquiryCTA";
+import JsonLd from "@/components/shared/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: {
@@ -15,9 +17,12 @@ export const metadata: Metadata = {
 // approved by Beauty Tshabalala 13 Jul 2026 as reasonable placeholder
 // copy in the site's tone — not real biographical history. Years-in-
 // operation trust signal isn't covered by that document, stays pending.
+const aboutBreadcrumb = breadcrumbJsonLd([{ name: "About", href: "/about" }]);
+
 export default function AboutPage() {
   return (
     <main>
+      <JsonLd data={aboutBreadcrumb} />
       <PageHero
         src="/images/stock/about-hero.jpg"
         alt="A Karoo-style farmhouse veranda at dusk, warmly lit"
