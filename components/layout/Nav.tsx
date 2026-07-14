@@ -8,7 +8,6 @@ const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/accommodation/guest-lodge", label: "Guest Lodge" },
-  { href: "/accommodation/student-accommodation", label: "Student Accommodation" },
   { href: "/facilities", label: "Facilities" },
   { href: "/gallery", label: "Gallery" },
   { href: "/explore-the-area", label: "Explore the Area" },

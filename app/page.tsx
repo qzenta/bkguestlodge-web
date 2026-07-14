@@ -23,14 +23,26 @@ export default function Home() {
         </h1>
         <Reveal>
           <p className="mt-4 max-w-xl font-body text-soft-ivory/90">
-            A comfortable stay in Vanderbijlpark — for business, for family, for the weekend.
+            Secure, comfortable accommodation in the heart of Vanderbijlpark, with
+            attentive, professional service — a trusted address for business travellers,
+            contractors, and families alike.
           </p>
-          <Link
-            href="/book-now"
-            className="mt-6 inline-block rounded-full bg-ochre-clay px-6 py-3 font-body text-sm font-semibold text-soft-ivory transition hover:opacity-90"
-          >
-            Book now →
-          </Link>
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <Link
+              href="/book-now"
+              className="inline-block rounded-full bg-ochre-clay px-6 py-3 font-body text-sm font-semibold text-soft-ivory transition hover:opacity-90"
+            >
+              Book Your Stay
+            </Link>
+            <a
+              href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block rounded-full border border-soft-ivory/70 px-6 py-3 font-body text-sm font-semibold text-soft-ivory transition hover:bg-soft-ivory/10"
+            >
+              WhatsApp Us
+            </a>
+          </div>
         </Reveal>
       </PageHero>
 
