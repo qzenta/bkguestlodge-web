@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import FacilityCard from "@/components/shared/FacilityCard";
 import PendingNote from "@/components/shared/PendingNote";
+import PageHero from "@/components/shared/PageHero";
 import Reveal from "@/components/shared/Reveal";
 import CascadeText from "@/components/shared/CascadeText";
 import { facilities } from "@/lib/content/facilities";
@@ -12,58 +12,54 @@ export default function Home() {
 
   return (
     <main>
-      {/* Two Doors hero — stacks vertically on mobile */}
-      <section className="relative flex flex-col md:h-[70vh] md:flex-row">
-        <Image
-          src="/images/stock/homepage-hero.jpg"
-          alt="A South African farmhouse veranda at dusk"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
-
-        <Reveal variant="scale" className="relative z-10 flex flex-1" delayMs={0}>
+      {/* Single Guest Lodge hero — BKGL-DS-001 v1.1, supersedes the v1.0 three-panel split */}
+      <PageHero
+        src="/images/stock/homepage-hero.jpg"
+        alt="A South African farmhouse veranda at dusk"
+        size="hero"
+      >
+        <h1 className="font-display text-4xl font-semibold md:text-5xl">
+          <CascadeText text="Guest Lodge" />
+        </h1>
+        <Reveal>
+          <p className="mt-4 max-w-xl font-body text-soft-ivory/90">
+            A comfortable stay in Vanderbijlpark — for business, for family, for the weekend.
+          </p>
           <Link
-            href="/accommodation/guest-lodge"
-            className="group flex flex-1 flex-col items-center justify-center gap-3 bg-ochre-clay/85 px-6 py-16 text-center text-soft-ivory transition hover:bg-ochre-clay/95 md:py-0"
+            href="/book-now"
+            className="mt-6 inline-block rounded-full bg-ochre-clay px-6 py-3 font-body text-sm font-semibold text-soft-ivory transition hover:opacity-90"
           >
-            <span className="font-display text-3xl font-semibold md:text-4xl">Guest Lodge</span>
-            <span className="max-w-xs font-body text-sm">
-              A comfortable stay in Vanderbijlpark — for business, for family, for the weekend.
-            </span>
-            <span className="font-body text-sm underline underline-offset-4">Book now →</span>
+            Book now →
           </Link>
         </Reveal>
+      </PageHero>
 
-        <Reveal variant="scale" className="relative z-10" delayMs={150}>
-          <div className="flex items-center justify-center bg-slate-teal/90 px-6 py-6 text-soft-ivory md:py-0">
-            <span className="font-display text-xl font-semibold md:text-2xl">BK Guest Lodge</span>
-          </div>
-        </Reveal>
-
-        <Reveal variant="scale" className="relative z-10 flex flex-1" delayMs={300}>
+      {/* Secondary banner — Student Accommodation, deliberately subordinate to the hero */}
+      <div className="border-b border-warm-sand bg-warm-sand/60 px-4 py-4 md:px-8">
+        <div className="mx-auto flex max-w-8xl flex-col items-center justify-between gap-3 sm:flex-row">
+          <p className="flex items-center gap-2 font-body text-sm text-charcoal-ink/80">
+            <span aria-hidden="true">🎓</span>
+            <span>
+              <span className="font-utility font-semibold uppercase tracking-wide text-cornflower-dusk">
+                Also opening January 2027:
+              </span>{" "}
+              Student accommodation
+            </span>
+          </p>
           <Link
             href="/accommodation/student-accommodation"
-            className="group flex flex-1 flex-col items-center justify-center gap-3 bg-cornflower-dusk/85 px-6 py-16 text-center text-soft-ivory transition hover:bg-cornflower-dusk/95 md:py-0"
+            className="font-utility text-sm font-semibold text-slate-teal underline underline-offset-4 hover:text-cornflower-dusk"
           >
-            <span className="rounded-full bg-slate-teal px-3 py-1 font-utility text-xs font-semibold uppercase tracking-wide">
-              Opening January 2027
-            </span>
-            <span className="font-display text-3xl font-semibold md:text-4xl">Student Accommodation</span>
-            <span className="max-w-xs font-body text-sm">
-              Safe, affordable student housing, close to campus.
-            </span>
-            <span className="font-body text-sm underline underline-offset-4">Apply now →</span>
+            Learn more →
           </Link>
-        </Reveal>
-      </section>
+        </div>
+      </div>
 
       {/* Below the fold */}
       <section className="mx-auto max-w-8xl px-4 py-16 text-center md:px-8">
-        <h1 className="font-display text-2xl font-semibold text-charcoal-ink md:text-3xl">
-          <CascadeText text="One address on Meurant Street. Two ways to call it home." />
-        </h1>
+        <h2 className="font-display text-2xl font-semibold text-charcoal-ink md:text-3xl">
+          One address on Meurant Street. Two ways to call it home.
+        </h2>
         <Reveal>
           <p className="mx-auto mt-4 max-w-2xl font-body text-charcoal-ink/80">
             BK Guest Lodge&rsquo;s Accommodation Solutions welcome short-stay guests —
