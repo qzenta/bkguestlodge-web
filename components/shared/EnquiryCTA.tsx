@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { businessPhone } from "@/lib/seo";
+import TrackedLink from "./TrackedLink";
 
 type EnquiryCTAProps = {
   heading?: string;
@@ -15,26 +15,35 @@ export default function EnquiryCTA({
       <h2 className="font-display text-2xl font-semibold">{heading}</h2>
       <p className="mx-auto mt-3 max-w-xl font-body text-soft-ivory/90">{body}</p>
       <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-        <Link
+        <TrackedLink
           href="/book-now"
+          eventAction="click_book_now"
+          eventCategory="conversion"
+          eventLabel="enquiry_cta"
           className="inline-block rounded-full bg-ochre-clay px-6 py-3 font-body text-sm font-semibold text-soft-ivory transition hover:opacity-90"
         >
           Book Your Stay
-        </Link>
-        <a
+        </TrackedLink>
+        <TrackedLink
           href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
-          target="_blank"
-          rel="noopener noreferrer"
+          eventAction="click_whatsapp"
+          eventCategory="conversion"
+          eventLabel="enquiry_cta"
+          external
           className="inline-block rounded-full border border-soft-ivory/70 px-6 py-3 font-body text-sm font-semibold text-soft-ivory transition hover:bg-soft-ivory/10"
         >
           WhatsApp Us
-        </a>
-        <a
+        </TrackedLink>
+        <TrackedLink
           href={`tel:${businessPhone}`}
+          eventAction="click_call"
+          eventCategory="conversion"
+          eventLabel="enquiry_cta"
+          external
           className="inline-block rounded-full border border-soft-ivory/70 px-6 py-3 font-body text-sm font-semibold text-soft-ivory transition hover:bg-soft-ivory/10"
         >
           Call Now
-        </a>
+        </TrackedLink>
       </div>
     </div>
   );
