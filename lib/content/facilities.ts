@@ -14,6 +14,7 @@ export const facilities: Facility[] = [
     icon: "wifi",
     title: "Free Wi-Fi",
     description: "Free Wi-Fi throughout the property.",
+    photo: "/images/facilities/wifi.jpg",
   },
   {
     icon: "car",
@@ -25,11 +26,13 @@ export const facilities: Facility[] = [
     icon: "zap",
     title: "Backup power",
     description: "Backup power to keep you covered during load-shedding.",
+    photo: "/images/facilities/backup-power.jpg",
   },
   {
     icon: "droplet",
     title: "Backup water supply",
     description: "Backup water supply in place alongside backup power.",
+    photo: "/images/facilities/water-supply.jpg",
   },
   {
     icon: "wind",
