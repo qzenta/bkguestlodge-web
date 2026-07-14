@@ -4,6 +4,7 @@ import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import WhatsAppCTA from "@/components/layout/WhatsAppCTA";
 import MobileStickyBar from "@/components/layout/MobileStickyBar";
+import CookieConsent from "@/components/shared/CookieConsent";
 import JsonLd from "@/components/shared/JsonLd";
 import { SITE_URL, businessAddress, businessPhone, cipcRegistrationNumber } from "@/lib/seo";
 import { websiteJsonLd } from "@/lib/structured-data";
@@ -73,6 +74,7 @@ export default function RootLayout({
         <Footer />
         <WhatsAppCTA />
         <MobileStickyBar />
+        <CookieConsent />
       </body>
     </html>
   );

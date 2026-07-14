@@ -50,9 +50,22 @@ export default function Footer() {
           </div>
         </div>
 
-        <p className="mt-8 border-t border-warm-sand/20 pt-6 font-body text-xs text-warm-sand/60">
-          © {new Date().getFullYear()} BK Guest Lodge. All rights reserved.
-        </p>
+        <div className="mt-8 border-t border-warm-sand/20 pt-6">
+          <div className="flex flex-wrap gap-x-6 gap-y-1">
+            <Link href="/privacy-policy" className="font-body text-xs text-warm-sand/60 hover:text-warm-sand">
+              Privacy Policy
+            </Link>
+            <Link href="/popia-notice" className="font-body text-xs text-warm-sand/60 hover:text-warm-sand">
+              POPIA Notice
+            </Link>
+            <Link href="/terms" className="font-body text-xs text-warm-sand/60 hover:text-warm-sand">
+              Terms &amp; Conditions
+            </Link>
+          </div>
+          <p className="mt-3 font-body text-xs text-warm-sand/60">
+            © {new Date().getFullYear()} BK Guest Lodge. All rights reserved.
+          </p>
+        </div>
       </div>
     </footer>
   );

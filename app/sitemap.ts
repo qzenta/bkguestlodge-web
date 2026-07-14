@@ -22,6 +22,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/faqs`, lastModified, priority: 0.7 },
     { url: `${SITE_URL}/about`, lastModified, priority: 0.6 },
     { url: `${SITE_URL}/explore-the-area`, lastModified, priority: 0.6 },
+    { url: `${SITE_URL}/privacy-policy`, lastModified, priority: 0.3 },
+    { url: `${SITE_URL}/popia-notice`, lastModified, priority: 0.3 },
+    { url: `${SITE_URL}/terms`, lastModified, priority: 0.3 },
     ...localSeoPages.map((page) => ({
       url: `${SITE_URL}/accommodation/${page.slug}`,
       lastModified,
