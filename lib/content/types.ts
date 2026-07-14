@@ -63,3 +63,10 @@ export interface Attraction {
   description: string;
   photo?: string;
 }
+
+export interface Audience {
+  label: string;
+  icon: string;
+  description: string;
+  whySuitable: string;
+}

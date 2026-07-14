@@ -3,7 +3,9 @@ import RoomTypeCard from "@/components/division/RoomTypeCard";
 import BookingCTA from "@/components/division/BookingCTA";
 import JsonLd from "@/components/shared/JsonLd";
 import PageHero from "@/components/shared/PageHero";
+import AudienceCard from "@/components/shared/AudienceCard";
 import { roomTypes } from "@/lib/content/room-types";
+import { audiences } from "@/lib/content/audiences";
 import { SITE_URL, businessAddress, businessPhone } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -77,6 +79,21 @@ export default function GuestLodgePage() {
 
           <div>
             <BookingCTA />
+          </div>
+        </div>
+
+        <div className="mt-16">
+          <h2 className="font-display text-2xl font-semibold text-charcoal-ink">
+            Who stays with us
+          </h2>
+          <p className="mt-2 max-w-2xl font-body text-charcoal-ink/80">
+            Guest Lodge suits anyone who needs a comfortable, secure base in
+            Vanderbijlpark — here&rsquo;s how we fit a few common reasons to stay.
+          </p>
+          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {audiences.map((audience) => (
+              <AudienceCard key={audience.label} audience={audience} />
+            ))}
           </div>
         </div>
       </div>
