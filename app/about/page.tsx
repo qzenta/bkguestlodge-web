@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PendingNote from "@/components/shared/PendingNote";
 import PageHero from "@/components/shared/PageHero";
+import EnquiryCTA from "@/components/shared/EnquiryCTA";
 
 export const metadata: Metadata = {
   title: {
@@ -50,6 +51,8 @@ export default function AboutPage() {
             <PendingNote text="TODO: pending client content — years in operation / local ties to Vanderbijlpark" />
           </li>
         </ul>
+
+        <EnquiryCTA />
       </div>
     </main>
   );

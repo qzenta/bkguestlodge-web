@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import FacilityCard from "@/components/shared/FacilityCard";
 import PageHero from "@/components/shared/PageHero";
+import EnquiryCTA from "@/components/shared/EnquiryCTA";
 import { facilities } from "@/lib/content/facilities";
 
 export const metadata: Metadata = {
@@ -25,6 +26,8 @@ export default function FacilitiesPage() {
             <FacilityCard key={facility.title} facility={facility} />
           ))}
         </div>
+
+        <EnquiryCTA />
       </div>
     </main>
   );

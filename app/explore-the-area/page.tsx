@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import AttractionCard from "@/components/shared/AttractionCard";
 import Reveal from "@/components/shared/Reveal";
+import EnquiryCTA from "@/components/shared/EnquiryCTA";
 import { attractions } from "@/lib/content/attractions";
 
 export const metadata: Metadata = {
@@ -26,6 +27,8 @@ export default function ExploreTheAreaPage() {
           ))}
         </div>
       </Reveal>
+
+      <EnquiryCTA />
     </main>
   );
 }

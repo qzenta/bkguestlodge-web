@@ -4,6 +4,7 @@ import PendingNote from "@/components/shared/PendingNote";
 import PageHero from "@/components/shared/PageHero";
 import Reveal from "@/components/shared/Reveal";
 import CascadeText from "@/components/shared/CascadeText";
+import EnquiryCTA from "@/components/shared/EnquiryCTA";
 import { facilities } from "@/lib/content/facilities";
 import { testimonials } from "@/lib/content/testimonials";
 
@@ -112,6 +113,10 @@ export default function Home() {
             </div>
           )}
         </Reveal>
+      </section>
+
+      <section className="mx-auto max-w-8xl px-4 pb-16 md:px-8">
+        <EnquiryCTA />
       </section>
     </main>
   );

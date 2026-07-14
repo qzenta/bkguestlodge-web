@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GalleryGrid from "@/components/shared/GalleryGrid";
 import PageHero from "@/components/shared/PageHero";
+import EnquiryCTA from "@/components/shared/EnquiryCTA";
 import { galleryImages } from "@/lib/content/gallery";
 
 export const metadata: Metadata = {
@@ -28,6 +29,8 @@ export default function GalleryPage() {
             <GalleryGrid images={galleryImages} />
           </div>
         )}
+
+        <EnquiryCTA />
       </div>
     </main>
   );

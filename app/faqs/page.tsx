@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import FAQAccordion from "@/components/shared/FAQAccordion";
+import EnquiryCTA from "@/components/shared/EnquiryCTA";
 import { faqs } from "@/lib/content/faqs";
 
 export const metadata: Metadata = {
@@ -14,6 +15,8 @@ export default function FaqsPage() {
       <div className="mt-10">
         <FAQAccordion faqs={faqs} />
       </div>
+
+      <EnquiryCTA heading="Still have questions?" body="We're happy to help — reach out and we'll get back to you quickly." />
     </main>
   );
 }

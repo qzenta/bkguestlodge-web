@@ -3,6 +3,7 @@ import { Spectral, Inter, Space_Grotesk } from "next/font/google";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import WhatsAppCTA from "@/components/layout/WhatsAppCTA";
+import MobileStickyBar from "@/components/layout/MobileStickyBar";
 import JsonLd from "@/components/shared/JsonLd";
 import { SITE_URL, businessAddress, businessPhone, cipcRegistrationNumber } from "@/lib/seo";
 import "./globals.css";
@@ -59,13 +60,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${spectral.variable} ${inter.variable} ${spaceGrotesk.variable} font-body antialiased`}
+        className={`${spectral.variable} ${inter.variable} ${spaceGrotesk.variable} pb-14 font-body antialiased md:pb-0`}
       >
         <JsonLd data={organizationJsonLd} />
         <Nav />
         {children}
         <Footer />
         <WhatsAppCTA />
+        <MobileStickyBar />
       </body>
     </html>
   );
