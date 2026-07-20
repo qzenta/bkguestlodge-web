@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { businessAddress, businessEmail } from "@/lib/seo";
+import CurrencyConverter from "@/components/shared/CurrencyConverter";
+import WeatherWidget from "@/components/shared/WeatherWidget";
 
 const links = [
   { href: "/", label: "Home" },
@@ -22,13 +24,19 @@ export default function Nav() {
   return (
     <>
       <div className="hidden bg-charcoal-ink text-soft-ivory/70 md:block">
-        <div className="mx-auto flex max-w-8xl items-center justify-end gap-6 px-4 py-1.5 font-utility text-xs md:px-8">
-          <span>
-            {businessAddress.streetAddress}, {businessAddress.addressLocality}
-          </span>
-          <a href={`mailto:${businessEmail}`} className="hover:text-soft-ivory">
-            {businessEmail}
-          </a>
+        <div className="mx-auto flex max-w-8xl items-center justify-between gap-6 px-4 py-1.5 font-utility text-xs md:px-8">
+          <div className="flex items-center gap-6">
+            <span>
+              {businessAddress.streetAddress}, {businessAddress.addressLocality}
+            </span>
+            <a href={`mailto:${businessEmail}`} className="hover:text-soft-ivory">
+              {businessEmail}
+            </a>
+          </div>
+          <div className="flex items-center gap-4">
+            <CurrencyConverter />
+            <WeatherWidget />
+          </div>
         </div>
       </div>
 

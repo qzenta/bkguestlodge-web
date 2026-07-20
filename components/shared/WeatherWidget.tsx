@@ -60,16 +60,14 @@ export default function WeatherWidget() {
   const weather = WEATHER_CODES[data.code] ?? { label: "", icon: "🌡️" };
 
   return (
-    <div className="flex items-center gap-2 font-utility text-soft-ivory">
-      <span aria-hidden="true" className="text-2xl leading-none">
+    <div
+      className="flex items-center gap-1.5 font-utility text-soft-ivory"
+      title={weather.label ? `${data.temp}°C, ${weather.label}` : `${data.temp}°C`}
+    >
+      <span aria-hidden="true" className="text-base leading-none">
         {weather.icon}
       </span>
-      <span className="leading-tight">
-        <span className="block text-sm font-semibold">{data.temp}°C</span>
-        {weather.label && (
-          <span className="block text-xs capitalize text-soft-ivory/80">{weather.label}</span>
-        )}
-      </span>
+      <span className="text-xs font-semibold">{data.temp}°C</span>
     </div>
   );
 }

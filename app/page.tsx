@@ -2,7 +2,6 @@ import Link from "next/link";
 import FacilityCard from "@/components/shared/FacilityCard";
 import PendingNote from "@/components/shared/PendingNote";
 import HeroCarousel from "@/components/shared/HeroCarousel";
-import WeatherWidget from "@/components/shared/WeatherWidget";
 import Reveal from "@/components/shared/Reveal";
 import CascadeText from "@/components/shared/CascadeText";
 import EnquiryCTA from "@/components/shared/EnquiryCTA";
@@ -33,17 +32,6 @@ export default function Home() {
 
   return (
     <main>
-      {/* Utility bar — Book Now + live weather, grouped together, homepage only */}
-      <div className="hidden items-center justify-end gap-6 bg-cornflower-dusk px-4 py-3 md:flex md:px-8">
-        <WeatherWidget />
-        <Link
-          href="/book-now"
-          className="rounded-full bg-soft-ivory px-6 py-2 font-utility text-xs font-semibold uppercase tracking-wide text-cornflower-dusk transition hover:opacity-90"
-        >
-          Book Now
-        </Link>
-      </div>
-
       {/* Single Guest Lodge hero — BKGL-DS-001 v1.1, now a sliding carousel per Daniel's 20 Jul request */}
       <HeroCarousel slides={heroSlides}>
         <h1 className="font-display text-4xl font-semibold md:text-5xl">
