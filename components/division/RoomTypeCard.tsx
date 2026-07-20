@@ -53,7 +53,10 @@ export default function RoomTypeCard({ room }: { room: RoomType }) {
           />
         </div>
       ) : (
-        <div className="flex aspect-[4/3] items-center justify-center bg-warm-sand p-4">
+        <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-gradient-to-br from-slate-teal via-cornflower-dusk to-slate-teal p-4">
+          <span className="absolute font-display text-6xl font-semibold text-soft-ivory/20" aria-hidden="true">
+            {room.name.charAt(0)}
+          </span>
           <PendingNote text="TODO: pending client content — photo" />
         </div>
       )}
