@@ -10,9 +10,9 @@ export default function Footer() {
             <Image
               src="/brand/bk-logo-full.png"
               alt="BK Guest Lodge — Stays for Travellers. Homes for Students."
-              width={72}
-              height={72}
-              className="rounded-lg"
+              width={230}
+              height={202}
+              className="h-20 w-auto rounded-lg"
             />
             <p className="mt-4 font-body text-sm text-warm-sand/80">
               8 Meurant Street, Vanderbijlpark S E 1, Gauteng, 1911

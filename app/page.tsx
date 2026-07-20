@@ -3,7 +3,6 @@ import FacilityCard from "@/components/shared/FacilityCard";
 import PendingNote from "@/components/shared/PendingNote";
 import HeroCarousel from "@/components/shared/HeroCarousel";
 import WeatherWidget from "@/components/shared/WeatherWidget";
-import CurrencyConverter from "@/components/shared/CurrencyConverter";
 import Reveal from "@/components/shared/Reveal";
 import CascadeText from "@/components/shared/CascadeText";
 import EnquiryCTA from "@/components/shared/EnquiryCTA";
@@ -34,16 +33,15 @@ export default function Home() {
 
   return (
     <main>
-      {/* Utility bar — Book Now / live weather / currency converter, homepage only */}
-      <div className="hidden items-center justify-between gap-4 bg-cornflower-dusk px-4 py-3 md:flex md:px-8">
+      {/* Utility bar — Book Now + live weather, grouped together, homepage only */}
+      <div className="hidden items-center justify-end gap-6 bg-cornflower-dusk px-4 py-3 md:flex md:px-8">
+        <WeatherWidget />
         <Link
           href="/book-now"
           className="rounded-full bg-soft-ivory px-6 py-2 font-utility text-xs font-semibold uppercase tracking-wide text-cornflower-dusk transition hover:opacity-90"
         >
           Book Now
         </Link>
-        <WeatherWidget />
-        <CurrencyConverter />
       </div>
 
       {/* Single Guest Lodge hero — BKGL-DS-001 v1.1, now a sliding carousel per Daniel's 20 Jul request */}
