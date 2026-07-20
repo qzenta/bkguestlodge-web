@@ -15,8 +15,8 @@ export default function Home() {
     <main>
       {/* Single Guest Lodge hero — BKGL-DS-001 v1.1, supersedes the v1.0 three-panel split */}
       <PageHero
-        src="/images/stock/homepage-hero.jpg"
-        alt="A South African farmhouse veranda at dusk"
+        src="/images/shared/exterior-pool-parking.jpg"
+        alt="BK Guest Lodge's pool, braai lapa, and secure parking on a clear Vanderbijlpark afternoon"
         size="hero"
       >
         <h1 className="font-display text-4xl font-semibold md:text-5xl">
