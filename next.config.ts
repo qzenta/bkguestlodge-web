@@ -12,7 +12,7 @@ const securityHeaders = [
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
   {
     key: "Content-Security-Policy",
-    value: `default-src 'self'; script-src ${scriptSrc.join(" ")}; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://api.brevo.com https://www.google-analytics.com https://www.clarity.ms; frame-ancestors 'self';`,
+    value: `default-src 'self'; script-src ${scriptSrc.join(" ")}; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://api.brevo.com https://www.google-analytics.com https://www.clarity.ms https://api.open-meteo.com https://api.frankfurter.dev; frame-ancestors 'self';`,
   },
 ];
 

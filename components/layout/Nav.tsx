@@ -34,12 +34,12 @@ export default function Nav() {
 
       <header className="sticky top-0 z-40 bg-slate-teal text-soft-ivory">
         <div className="mx-auto flex max-w-8xl items-center justify-between px-4 py-4 md:px-8">
-          <Link href="/" className="flex items-center gap-2 font-display text-lg font-semibold tracking-wide">
+          <Link href="/" className="flex items-center gap-3 font-display text-lg font-semibold tracking-wide">
             <Image
               src="/brand/bk-logo-icon.png"
               alt="BK Guest Lodge"
-              width={36}
-              height={36}
+              width={56}
+              height={56}
               className="rounded-md"
               priority
             />

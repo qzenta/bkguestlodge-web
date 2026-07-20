@@ -1,24 +1,53 @@
 import Link from "next/link";
 import FacilityCard from "@/components/shared/FacilityCard";
 import PendingNote from "@/components/shared/PendingNote";
-import PageHero from "@/components/shared/PageHero";
+import HeroCarousel from "@/components/shared/HeroCarousel";
+import WeatherWidget from "@/components/shared/WeatherWidget";
+import CurrencyConverter from "@/components/shared/CurrencyConverter";
 import Reveal from "@/components/shared/Reveal";
 import CascadeText from "@/components/shared/CascadeText";
 import EnquiryCTA from "@/components/shared/EnquiryCTA";
 import { facilities } from "@/lib/content/facilities";
 import { testimonials } from "@/lib/content/testimonials";
 
+const heroSlides = [
+  {
+    src: "/images/shared/exterior-pool-parking.jpg",
+    alt: "BK Guest Lodge's pool, braai lapa, and secure parking on a clear Vanderbijlpark afternoon",
+  },
+  {
+    src: "/images/shared/braai-area.jpg",
+    alt: "The braai lapa at BK Guest Lodge",
+  },
+  {
+    src: "/images/guest-lodge/bedroom-navy.jpg",
+    alt: "A guest bedroom at BK Guest Lodge",
+  },
+  {
+    src: "/images/guest-lodge/kitchen.jpg",
+    alt: "A self-contained kitchen at BK Guest Lodge",
+  },
+];
+
 export default function Home() {
   const previewFacilities = facilities.slice(0, 4);
 
   return (
     <main>
-      {/* Single Guest Lodge hero — BKGL-DS-001 v1.1, supersedes the v1.0 three-panel split */}
-      <PageHero
-        src="/images/shared/exterior-pool-parking.jpg"
-        alt="BK Guest Lodge's pool, braai lapa, and secure parking on a clear Vanderbijlpark afternoon"
-        size="hero"
-      >
+      {/* Utility bar — Book Now / live weather / currency converter, homepage only */}
+      <div className="hidden items-center justify-between gap-4 bg-cornflower-dusk px-4 py-3 md:flex md:px-8">
+        <Link
+          href="/book-now"
+          className="rounded-full bg-soft-ivory px-6 py-2 font-utility text-xs font-semibold uppercase tracking-wide text-cornflower-dusk transition hover:opacity-90"
+        >
+          Book Now
+        </Link>
+        <WeatherWidget />
+        <CurrencyConverter />
+      </div>
+
+      {/* Single Guest Lodge hero — BKGL-DS-001 v1.1, now a sliding carousel per Daniel's 20 Jul request */}
+      <HeroCarousel slides={heroSlides}>
         <h1 className="font-display text-4xl font-semibold md:text-5xl">
           <CascadeText text="Guest Lodge" />
         </h1>
@@ -45,7 +74,7 @@ export default function Home() {
             </a>
           </div>
         </Reveal>
-      </PageHero>
+      </HeroCarousel>
 
       {/* Secondary banner — Student Accommodation, deliberately subordinate to the hero */}
       <div className="border-b border-warm-sand bg-warm-sand/60 px-4 py-4 md:px-8">
