@@ -67,6 +67,7 @@ export interface Attraction {
 export interface Audience {
   label: string;
   icon: string;
+  photo: string;
   description: string;
   whySuitable: string;
 }

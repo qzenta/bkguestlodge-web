@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AttractionCard from "@/components/shared/AttractionCard";
+import PageHero from "@/components/shared/PageHero";
 import Reveal from "@/components/shared/Reveal";
 import EnquiryCTA from "@/components/shared/EnquiryCTA";
 import JsonLd from "@/components/shared/JsonLd";
@@ -19,37 +20,43 @@ const exploreBreadcrumb = breadcrumbJsonLd([{ name: "Explore the Area", href: "/
 
 export default function ExploreTheAreaPage() {
   return (
-    <main className="mx-auto max-w-8xl px-4 py-16 md:px-8">
+    <main>
       <JsonLd data={exploreBreadcrumb} />
-      <h1 className="font-display text-3xl font-semibold text-charcoal-ink">What&rsquo;s near BK Guest Lodge in Vanderbijlpark?</h1>
-      <p className="mt-4 max-w-2xl font-body text-charcoal-ink/80">
-        BK Guest Lodge sits close to some of the Vaal region&rsquo;s best-known spots — whether
-        you&rsquo;re here with the family, here to study, or just here for the weekend.
-      </p>
-      <Reveal>
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-          {attractions.map((attraction) => (
-            <AttractionCard key={attraction.name} attraction={attraction} />
-          ))}
+      <PageHero
+        src="/images/stock/vaal-river.jpg"
+        alt="The Vaal River near Vanderbijlpark at sunrise"
+      />
+      <div className="mx-auto max-w-8xl px-4 py-16 md:px-8">
+        <h1 className="font-display text-3xl font-semibold text-charcoal-ink">What&rsquo;s near BK Guest Lodge in Vanderbijlpark?</h1>
+        <p className="mt-4 max-w-2xl font-body text-charcoal-ink/80">
+          BK Guest Lodge sits close to some of the Vaal region&rsquo;s best-known spots — whether
+          you&rsquo;re here with the family, here to study, or just here for the weekend.
+        </p>
+        <Reveal>
+          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+            {attractions.map((attraction) => (
+              <AttractionCard key={attraction.name} attraction={attraction} />
+            ))}
+          </div>
+        </Reveal>
+
+        <div className="mt-10 flex flex-wrap gap-4">
+          <Link
+            href="/accommodation/guest-lodge"
+            className="font-utility text-sm font-semibold text-slate-teal underline underline-offset-4 hover:text-cornflower-dusk"
+          >
+            View our rooms →
+          </Link>
+          <Link
+            href="/accommodation/near-emerald-resort"
+            className="font-utility text-sm font-semibold text-slate-teal underline underline-offset-4 hover:text-cornflower-dusk"
+          >
+            Staying near Emerald Resort? →
+          </Link>
         </div>
-      </Reveal>
 
-      <div className="mt-10 flex flex-wrap gap-4">
-        <Link
-          href="/accommodation/guest-lodge"
-          className="font-utility text-sm font-semibold text-slate-teal underline underline-offset-4 hover:text-cornflower-dusk"
-        >
-          View our rooms →
-        </Link>
-        <Link
-          href="/accommodation/near-emerald-resort"
-          className="font-utility text-sm font-semibold text-slate-teal underline underline-offset-4 hover:text-cornflower-dusk"
-        >
-          Staying near Emerald Resort? →
-        </Link>
+        <EnquiryCTA />
       </div>
-
-      <EnquiryCTA />
     </main>
   );
 }

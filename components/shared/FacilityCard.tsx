@@ -12,9 +12,15 @@ export default function FacilityCard({ facility }: { facility: Facility }) {
           facility.pending ? "border border-dashed border-ochre-clay/50" : ""
         }`}
       >
-        {facility.photo && (
+        {facility.photo ? (
           <div className="relative aspect-[4/3] bg-warm-sand">
             <Image src={facility.photo} alt={facility.title} fill sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover" />
+          </div>
+        ) : (
+          <div className="flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-slate-teal via-cornflower-dusk to-slate-teal">
+            <span className="font-display text-6xl font-semibold text-soft-ivory/25">
+              {facility.title.charAt(0)}
+            </span>
           </div>
         )}
         <div className="p-6">

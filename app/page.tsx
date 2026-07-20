@@ -69,18 +69,20 @@ export default function Home() {
       </div>
 
       {/* Below the fold */}
-      <section className="mx-auto max-w-8xl px-4 py-16 text-center md:px-8">
-        <h2 className="font-display text-2xl font-semibold text-charcoal-ink md:text-3xl">
-          One address on Meurant Street. Two ways to call it home.
-        </h2>
-        <Reveal>
-          <p className="mx-auto mt-4 max-w-2xl font-body text-charcoal-ink/80">
-            BK Guest Lodge&rsquo;s Accommodation Solutions welcome short-stay guests —
-            contractors, business travellers, and families passing through Vanderbijlpark —
-            alongside students who call it home for the term. Whichever door you&rsquo;re here
-            for, you&rsquo;ll find the same standard of care.
-          </p>
-        </Reveal>
+      <section className="bg-gradient-to-b from-warm-sand/60 via-soft-ivory to-warm-sand/30 px-4 py-16 text-center md:px-8">
+        <div className="mx-auto max-w-8xl">
+          <h2 className="font-display text-2xl font-semibold text-charcoal-ink md:text-3xl">
+            One address on Meurant Street. Two ways to call it home.
+          </h2>
+          <Reveal>
+            <p className="mx-auto mt-4 max-w-2xl font-body text-charcoal-ink/80">
+              BK Guest Lodge&rsquo;s Accommodation Solutions welcome short-stay guests —
+              contractors, business travellers, and families passing through Vanderbijlpark —
+              alongside students who call it home for the term. Whichever door you&rsquo;re here
+              for, you&rsquo;ll find the same standard of care.
+            </p>
+          </Reveal>
+        </div>
       </section>
 
       {/* Facilities preview */}

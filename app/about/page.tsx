@@ -25,8 +25,8 @@ export default function AboutPage() {
     <main>
       <JsonLd data={aboutBreadcrumb} />
       <PageHero
-        src="/images/stock/about-hero.jpg"
-        alt="A Karoo-style farmhouse veranda at dusk, warmly lit"
+        src="/images/shared/braai-area.jpg"
+        alt="The braai lapa at BK Guest Lodge, 8 Meurant Street, Vanderbijlpark"
       />
       <div className="mx-auto max-w-8xl px-4 py-16 md:px-8">
         <h1 className="font-display text-3xl font-semibold text-charcoal-ink">
