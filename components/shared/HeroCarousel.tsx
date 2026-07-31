@@ -47,9 +47,15 @@ export default function HeroCarousel({
       ))}
 
       {children && (
-        <div className="absolute inset-0 flex items-end bg-gradient-to-t from-charcoal-ink/80 via-charcoal-ink/20 to-transparent">
-          <div className="mx-auto w-full max-w-8xl px-4 pb-10 text-soft-ivory md:px-8 md:pb-16">
-            {children}
+        <div className="absolute inset-0">
+          {/* Mobile: full solid scrim, since there's no room to show the photo through anyway */}
+          <div className="absolute inset-0 bg-charcoal-ink/80 md:hidden" />
+          {/* Desktop: left-panel gradient so the photo shows through on the right */}
+          <div className="absolute inset-0 hidden bg-gradient-to-r from-charcoal-ink/95 via-charcoal-ink/70 to-transparent md:block" />
+          <div className="relative flex h-full items-center">
+            <div className="mx-auto w-full max-w-8xl px-4 py-10 text-soft-ivory md:px-8">
+              <div className="max-w-lg md:max-w-xl">{children}</div>
+            </div>
           </div>
         </div>
       )}

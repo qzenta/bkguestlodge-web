@@ -2,11 +2,21 @@ import Link from "next/link";
 import FacilityCard from "@/components/shared/FacilityCard";
 import PendingNote from "@/components/shared/PendingNote";
 import HeroCarousel from "@/components/shared/HeroCarousel";
+import HeroFeatureRow from "@/components/shared/HeroFeatureRow";
 import Reveal from "@/components/shared/Reveal";
 import CascadeText from "@/components/shared/CascadeText";
 import EnquiryCTA from "@/components/shared/EnquiryCTA";
 import { facilities } from "@/lib/content/facilities";
 import { testimonials } from "@/lib/content/testimonials";
+
+// Facts already confirmed sitewide in lib/content/facilities.ts
+// (BKGL-CONTENT-001) — not new claims, just surfaced in the hero too.
+const heroFeatures = [
+  { icon: "wifi" as const, label: "Free Wi-Fi", caption: "Throughout the property" },
+  { icon: "shield" as const, label: "24-Hour Security", caption: "Access control, always on" },
+  { icon: "parking" as const, label: "Secure Parking", caption: "On-site for every guest" },
+  { icon: "power" as const, label: "Backup Power & Water", caption: "Covered during load-shedding" },
+];
 
 const heroSlides = [
   {
@@ -32,35 +42,48 @@ export default function Home() {
 
   return (
     <main>
-      {/* Single Guest Lodge hero — BKGL-DS-001 v1.1, now a sliding carousel per Daniel's 20 Jul request */}
-      <HeroCarousel slides={heroSlides}>
-        <h1 className="font-display text-4xl font-semibold md:text-5xl">
-          <CascadeText text="Guest Lodge" />
-        </h1>
-        <Reveal>
-          <p className="mt-4 max-w-xl font-body text-soft-ivory/90">
-            Secure, comfortable accommodation in the heart of Vanderbijlpark, with
-            attentive, professional service — a trusted address for business travellers,
-            contractors, and families alike.
-          </p>
-          <div className="mt-6 flex flex-wrap items-center gap-3">
-            <Link
-              href="/book-now"
-              className="inline-block rounded-full bg-ochre-clay px-6 py-3 font-body text-sm font-semibold text-soft-ivory transition hover:opacity-90"
-            >
-              Book Your Stay
-            </Link>
-            <a
-              href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block rounded-full border border-soft-ivory/70 px-6 py-3 font-body text-sm font-semibold text-soft-ivory transition hover:bg-soft-ivory/10"
-            >
-              WhatsApp Us
-            </a>
-          </div>
-        </Reveal>
-      </HeroCarousel>
+      {/* Single Guest Lodge hero — BKGL-DS-001 v1.1, restyled 20 Jul 2026 to a
+          framed card + side-panel layout, per Daniel's WH Auctioneers reference */}
+      <section className="bg-warm-sand/40 px-4 pb-8 pt-6 md:px-8">
+        <div className="mx-auto max-w-8xl overflow-hidden rounded-2xl shadow-xl">
+          <HeroCarousel slides={heroSlides}>
+            <p className="font-utility text-sm font-bold uppercase tracking-wide text-ochre-clay">
+              Stay With Confidence In Vanderbijlpark
+            </p>
+            <h1 className="mt-2 font-display text-4xl font-bold uppercase leading-[1.05] md:text-5xl">
+              <CascadeText text="Secure Stays." />
+              <br />
+              <span className="text-ochre-clay">
+                <CascadeText text="Warm Welcomes." />
+              </span>
+            </h1>
+            <Reveal>
+              <p className="mt-4 max-w-md font-body text-soft-ivory/90">
+                Secure, comfortable accommodation in the heart of Vanderbijlpark, with
+                attentive, professional service — a trusted address for business travellers,
+                contractors, and families alike.
+              </p>
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                <Link
+                  href="/book-now"
+                  className="inline-block rounded-full bg-ochre-clay px-6 py-3 font-body text-sm font-semibold text-soft-ivory transition hover:opacity-90"
+                >
+                  Book Your Stay
+                </Link>
+                <a
+                  href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block rounded-full border border-soft-ivory/70 px-6 py-3 font-body text-sm font-semibold text-soft-ivory transition hover:bg-soft-ivory/10"
+                >
+                  WhatsApp Us
+                </a>
+              </div>
+              <HeroFeatureRow features={heroFeatures} />
+            </Reveal>
+          </HeroCarousel>
+        </div>
+      </section>
 
       {/* Secondary banner — Student Accommodation, deliberately subordinate to the hero */}
       <div className="border-b border-warm-sand bg-warm-sand/60 px-4 py-4 md:px-8">
