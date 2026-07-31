@@ -45,7 +45,7 @@ export default function Home() {
       {/* Single Guest Lodge hero — BKGL-DS-001 v1.1, restyled 20 Jul 2026 to a
           framed card + side-panel layout, per Daniel's WH Auctioneers reference */}
       <section className="bg-warm-sand/40 px-4 pb-8 pt-6 md:px-8">
-        <div className="mx-auto max-w-8xl overflow-hidden rounded-2xl shadow-xl">
+        <div className="mx-auto max-w-9xl overflow-hidden rounded-2xl shadow-xl">
           <HeroCarousel slides={heroSlides}>
             <p className="font-utility text-sm font-bold uppercase tracking-wide text-ochre-clay">
               Stay With Confidence In Vanderbijlpark

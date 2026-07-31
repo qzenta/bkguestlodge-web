@@ -26,6 +26,7 @@ const config: Config = {
       },
       maxWidth: {
         "8xl": "80rem",
+        "9xl": "90rem",
       },
     },
   },
